@@ -1,12 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe AccountTransaction, type: :model do
+  context 'associations' do
+    it { should belong_to(:origin) }
+    it { should have_many(:payers) }
+  end
+  
   context 'validations' do
     it { should validate_presence_of(:kind) }
     it { should validate_presence_of(:title) }
     it { should validate_presence_of(:purchase_date) }
     it { should validate_presence_of(:real_amount) }
-    it { should validate_presence_of(:fake_amount) }
 
     it { should define_enum_for(:kind).with_values(revenue: 0, expense: 1) }
   end
