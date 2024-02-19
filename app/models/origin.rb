@@ -1,6 +1,5 @@
 class Origin < ApplicationRecord
-  belongs_to :account_transaction
+  has_many :account_transactions
   
   validates :title, presence: true
-  validates :title, uniqueness: { scope: :account_transaction_id }
 end

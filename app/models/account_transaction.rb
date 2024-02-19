@@ -1,9 +1,10 @@
 class AccountTransaction < ApplicationRecord
-  validates :kind, presence: true
+  has_many :payers
+  belongs_to :origin
+  
   validates :title, presence: true
   validates :purchase_date, presence: true
   validates :real_amount, presence: true
-  validates :fake_amount, presence: true
 
   before_save :validate_installments
   before_save :validate_fake_amount

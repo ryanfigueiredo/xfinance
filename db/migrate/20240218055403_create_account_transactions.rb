@@ -9,6 +9,8 @@ class CreateAccountTransactions < ActiveRecord::Migration[7.1]
       t.decimal :fake_amount
       t.decimal :real_amount, null: false
 
+      t.references :origin, null: false, foreign_key: true
+
       t.timestamps
     end
   end

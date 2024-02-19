@@ -1,14 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Origin, type: :model do
-  context 'validations' do
-    it { should belong_to(:account_transaction) }
-    it { should validate_presence_of(:title) }
-    
-    context 'uniqueness' do
-      before { create(:origin) }
+  context 'associations' do
+    it { should have_many(:account_transactions) }
+  end
 
-      it { should validate_uniqueness_of(:title).scoped_to(:account_transaction_id) }
-    end
+  context 'validations' do
+    it { should validate_presence_of(:title) }
   end
 end

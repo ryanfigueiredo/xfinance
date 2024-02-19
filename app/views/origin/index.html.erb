@@ -1,0 +1,18 @@
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @origins.each do |origins| %>
+      <tr>
+        <td>
+          <a href="origin/<%= origins.id %>"> 
+            <%= origins.title %>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

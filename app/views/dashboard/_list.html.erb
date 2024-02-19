@@ -1,0 +1,30 @@
+<%= render "account_transaction/form" %>
+
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Purchase Date</th>
+      <th scope="col">Installments</th>
+      <th scope="col">Payers</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @account_transactions.each do |account_transaction| %>
+        <tr class="table-<%= account_transaction.revenue? ? "danger" : "success" %>">
+        <td><%= account_transaction.title %></td>
+        <td><%= account_transaction.purchase_date %></td>
+        <td><%= account_transaction.installments %></td>
+        <td><%= account_transaction.payers.map(&:name).join(", ") %></td>
+        <td><%= account_transaction.origin.title %></td>
+        <td>R$ <%= account_transaction.real_amount %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <th colspan="5">Total</th>
+      <th>R$ <%= @account_transactions.sum(&:real_amount) %></th>
+    </tr>
+  </tbody>
+</table>

@@ -22,18 +22,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_18_084347) do
     t.date "due_date"
     t.decimal "fake_amount"
     t.decimal "real_amount", null: false
+    t.bigint "origin_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["origin_id"], name: "index_account_transactions_on_origin_id"
   end
 
   create_table "origins", force: :cascade do |t|
     t.string "title", null: false
     t.date "payment_date"
-    t.bigint "account_transaction_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["account_transaction_id"], name: "index_origins_on_account_transaction_id"
-    t.index ["title", "account_transaction_id"], name: "index_origins_on_title_and_account_transaction_id", unique: true
   end
 
   create_table "payers", force: :cascade do |t|
@@ -45,6 +44,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_18_084347) do
     t.index ["name", "account_transaction_id"], name: "index_payers_on_name_and_account_transaction_id", unique: true
   end
 
-  add_foreign_key "origins", "account_transactions"
+  add_foreign_key "account_transactions", "origins"
   add_foreign_key "payers", "account_transactions"
 end
