@@ -2,7 +2,6 @@ class AccountTransaction < ApplicationRecord
   has_many :payers
   belongs_to :origin
   
-  validates :kind, presence: true
   validates :title, presence: true
   validates :purchase_date, presence: true
   validates :real_amount, presence: true
