@@ -1,6 +1,6 @@
 class Payer < ApplicationRecord
-  belongs_to :account_transaction
+  has_many :payers_finance_transactions
+  has_many :finance_transactions, :through => :payers_finance_transactions
 
-  validates :name, presence: true
-  validates :name, uniqueness: { scope: :account_transaction_id }
+  has_many :origins
 end

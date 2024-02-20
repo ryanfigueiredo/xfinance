@@ -1,5 +1,6 @@
 class Origin < ApplicationRecord
-  has_many :account_transactions
+  belongs_to :payer
+  has_many :finance_transactions
   
   validates :title, presence: true
 

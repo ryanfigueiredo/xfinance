@@ -5,6 +5,6 @@ class OriginController < ApplicationController
 
   def show
     origin = Origin.find(params[:id])
-    @account_transactions = origin.account_transactions.includes(:payers)
+    @finance_transactions = origin.finance_transactions.includes(:payers)
   end
 end
