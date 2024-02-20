@@ -7,5 +7,6 @@ FactoryBot.define do
     due_date { "2024-02-18" }
     real_amount { "9.99" }
     fake_amount { real_amount }
+    origin { create(:origin) }
   end
 end

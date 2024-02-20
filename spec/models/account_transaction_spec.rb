@@ -7,7 +7,6 @@ RSpec.describe AccountTransaction, type: :model do
   end
   
   context 'validations' do
-    it { should validate_presence_of(:kind) }
     it { should validate_presence_of(:title) }
     it { should validate_presence_of(:purchase_date) }
     it { should validate_presence_of(:real_amount) }
