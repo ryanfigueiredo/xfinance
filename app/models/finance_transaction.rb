@@ -2,8 +2,9 @@ class FinanceTransaction < ApplicationRecord
   has_many :payers_finance_transactions
   has_many :payers, :through => :payers_finance_transactions
 
-  belongs_to :origin
-  
+  has_many :groups_finance_transactions
+  has_many :groups, :through => :groups_finance_transactions
+
   validates :title, presence: true
   validates :purchase_date, presence: true
   validates :real_amount, presence: true

@@ -5,11 +5,11 @@
     </tr>
   </thead>
   <tbody>
-    <% @origins.each do |origins| %>
+    <% @groups.each do |group| %>
       <tr>
         <td>
-          <a href="origin/<%= origins.id %>"> 
-            <%= origins.title %>
+          <a href="group/<%= group.id %>"> 
+            <%= group.title %>
           </a>
         </td>
       </tr>

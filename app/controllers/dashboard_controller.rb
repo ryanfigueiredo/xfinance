@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
   def index
-    @finance_transactions = FinanceTransaction.includes(:payers, :origin)
+    @finance_transactions = FinanceTransaction.includes(:payers, :groups)
   end
 end

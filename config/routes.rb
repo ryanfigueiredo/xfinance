@@ -10,8 +10,8 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#index'
 
-  get '/account_transaction', to: 'account_transaction#index'
+  get '/finance_transaction', to: 'finance_transaction#index'
 
-  get '/origin', to: 'origin#index'
-  get '/origin/:id', to: 'origin#show'
+  get '/group', to: 'group#index'
+  get '/group/:id', to: 'group#show'
 end

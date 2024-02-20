@@ -1,4 +1,4 @@
-<%= render "account_transaction/form" %>
+<%= render "finance_transaction/form" %>
 
 <table class="table table-sm">
   <thead>
@@ -7,7 +7,7 @@
       <th scope="col">Purchase Date</th>
       <th scope="col">Installments</th>
       <th scope="col">Payers</th>
-      <th scope="col">Origin</th>
+      <th scope="col">Group</th>
       <th scope="col">Amount</th>
     </tr>
   </thead>
@@ -18,7 +18,7 @@
         <td><%= finance_transaction.purchase_date %></td>
         <td><%= finance_transaction.installments %></td>
         <td><%= finance_transaction.payers.map(&:name).join(", ") %></td>
-        <td><%= finance_transaction.origin.title %></td>
+        <td><%= finance_transaction.groups.first.title %></td>
         <td>R$ <%= finance_transaction.real_amount %></td>
       </tr>
     <% end %>
