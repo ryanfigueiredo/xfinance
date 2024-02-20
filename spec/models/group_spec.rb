@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Origin, type: :model do
+RSpec.describe Group, type: :model do
   context 'associations' do
-    it { should have_many(:account_transactions) }
+    it { should have_many(:finance_transactions) }
   end
 
   context 'validations' do

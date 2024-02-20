@@ -1,5 +1,4 @@
 class Group < ApplicationRecord
-  # belongs_to :payer
   has_many :groups_finance_transactions
   has_many :finance_transactions, :through => :groups_finance_transactions
   

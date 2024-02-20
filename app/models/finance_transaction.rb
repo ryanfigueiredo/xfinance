@@ -9,7 +9,7 @@ class FinanceTransaction < ApplicationRecord
   validates :purchase_date, presence: true
   validates :real_amount, presence: true
 
-  # before_save :validate_installments
+  before_save :validate_installments
   # before_save :validate_fake_amount
 
   enum :kind, { revenue: 0, expense: 1 }, default: :expense

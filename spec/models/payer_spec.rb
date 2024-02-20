@@ -1,14 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Payer, type: :model do
-  context 'validations' do
-    it { should belong_to(:account_transaction) }
-    it { should validate_presence_of(:name) }
-    
-    context 'uniqueness' do
-      before { create(:payer) }
+  context 'associations' do
+    it { should have_many(:finance_transactions) }
+  end
 
-      it { should validate_uniqueness_of(:name).scoped_to(:account_transaction_id) }
-    end
+  context 'validations' do
+    it { should validate_presence_of(:name) }
   end
 end
