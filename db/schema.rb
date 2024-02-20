@@ -10,42 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_19_235312) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_20_043638) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "account_transactions", force: :cascade do |t|
-    t.integer "kind", default: 0, null: false
+  create_table "finance_transactions", force: :cascade do |t|
+    t.integer "kind", default: 0
     t.string "title", null: false
-    t.date "purchase_date", null: false
-    t.string "installments", default: "Cash"
-    t.date "due_date"
-    t.decimal "fake_amount"
-    t.decimal "real_amount", null: false
+    t.date "purchase_date"
+    t.string "installments", default: "cash"
     t.bigint "origin_id", null: false
+    t.decimal "real_amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["origin_id"], name: "index_account_transactions_on_origin_id"
+    t.index ["origin_id"], name: "index_finance_transactions_on_origin_id"
   end
 
   create_table "origins", force: :cascade do |t|
     t.string "title", null: false
-    t.date "payment_date"
+    t.string "payment_day"
+    t.string "close_day"
+    t.integer "kind", default: 0
+    t.bigint "payer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "close_day"
-    t.integer "kind", default: 0, null: false
+    t.index ["payer_id"], name: "index_origins_on_payer_id"
   end
 
   create_table "payers", force: :cascade do |t|
-    t.string "name"
-    t.bigint "account_transaction_id", null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["account_transaction_id"], name: "index_payers_on_account_transaction_id"
-    t.index ["name", "account_transaction_id"], name: "index_payers_on_name_and_account_transaction_id", unique: true
   end
 
-  add_foreign_key "account_transactions", "origins"
-  add_foreign_key "payers", "account_transactions"
+  create_table "payers_finance_transactions", force: :cascade do |t|
+    t.bigint "payer_id", null: false
+    t.bigint "finance_transaction_id", null: false
+    t.decimal "payment_amount", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["finance_transaction_id"], name: "index_payers_finance_transactions_on_finance_transaction_id"
+    t.index ["payer_id"], name: "index_payers_finance_transactions_on_payer_id"
+  end
+
+  add_foreign_key "finance_transactions", "origins"
+  add_foreign_key "origins", "payers"
+  add_foreign_key "payers_finance_transactions", "finance_transactions"
+  add_foreign_key "payers_finance_transactions", "payers"
 end
