@@ -11,7 +11,7 @@ class FinanceTransaction < ApplicationRecord
   # before_save :validate_installments
   # before_save :validate_fake_amount
 
-  enum :kind, { revenue: 0, expense: 1 }, default: :revenue
+  enum :kind, { revenue: 0, expense: 1 }, default: :expense
   
   def validate_installments
     self.installments = 'Cash' if self.installments.blank? 
