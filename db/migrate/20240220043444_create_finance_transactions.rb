@@ -5,7 +5,6 @@ class CreateFinanceTransactions < ActiveRecord::Migration[7.1]
       t.string :title, null: false
       t.date :purchase_date
       t.string :installments, default: 'cash'
-      t.references :origin, null: false, foreign_key: true
       t.decimal :real_amount
 
       t.timestamps
