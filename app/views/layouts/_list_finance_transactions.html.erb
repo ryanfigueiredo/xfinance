@@ -1,10 +1,9 @@
-<%= render "finance_transaction/form" %>
-
 <table class="table table-sm">
   <thead>
     <tr>
       <th scope="col">Title</th>
       <th scope="col">Purchase Date</th>
+      <th scope="col">Payment Date</th>
       <th scope="col">Installments</th>
       <th scope="col">Payers</th>
       <th scope="col">Group</th>
@@ -16,6 +15,7 @@
         <tr class="table-<%= finance_transaction.revenue? ? "success" : "danger" %>">
         <td><%= finance_transaction.title %></td>
         <td><%= finance_transaction.purchase_date %></td>
+        <td><%= finance_transaction.payment_date %></td>
         <td><%= finance_transaction.installments %></td>
         <td><%= finance_transaction.payers.map(&:name).join(", ") %></td>
         <td><%= finance_transaction.groups.first.title %></td>
@@ -23,8 +23,8 @@
       </tr>
     <% end %>
     <tr>
-      <th colspan="5">Total</th>
-      <th>R$ <%= @finance_transactions.sum(&:real_amount) %></th>
+      <th colspan="6">Total</th>
+      <th>R$ <%= sum_total_transactions(@finance_transactions) %></th>
     </tr>
   </tbody>
 </table>

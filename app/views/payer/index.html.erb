@@ -1,0 +1,5 @@
+<ul class="list-group">
+  <% @payers.each do |payer| %>
+    <li class="list-group-item"><%= payer.name %> - R$ <%= sum_total_transactions(payer.finance_transactions) %></li>
+  <% end %>
+</ul>

@@ -12,7 +12,7 @@
           <a class="nav-link" aria-current="page" href="/group">Groups</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Payers</a>
+          <a class="nav-link" href="/payer">Payers</a>
         </li>
       </ul>
 
@@ -23,3 +23,13 @@
     </div>
   </div>
 </nav>
+
+<% if request.path != '/group' %>
+  <ul class="py-2 nav justify-content-center nav-pills">
+    <% months_of_year.each do |month| %>
+      <li class="nav-item">
+        <a class="nav-link <%= current_month.camelize == month && 'active' %>" href="<%= path_month(month) %>"><%= month %></a>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

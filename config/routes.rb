@@ -9,9 +9,14 @@ Rails.application.routes.draw do
   # root "dashboard#index"
 
   get '/dashboard', to: 'dashboard#index'
+  get '/dashboard/:month', to: 'dashboard#index'
 
   get '/finance_transaction', to: 'finance_transaction#index'
 
   get '/group', to: 'group#index'
   get '/group/:id', to: 'group#show'
+  get '/group/:id/:month', to: 'group#show'
+
+  get '/payer', to: 'payer#index'
+  get '/payer/:month', to: 'payer#index'
 end

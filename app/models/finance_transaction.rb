@@ -6,7 +6,7 @@ class FinanceTransaction < ApplicationRecord
   has_many :groups, :through => :groups_finance_transactions
 
   validates :title, presence: true
-  validates :purchase_date, presence: true
+  # validates :purchase_date, presence: true
   validates :real_amount, presence: true
 
   before_save :validate_installments
