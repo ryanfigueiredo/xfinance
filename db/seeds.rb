@@ -7,6 +7,9 @@ initial_payers = [
   },
   {
     "name": "IA"
+  },
+  {
+    "name": "Mae"
   }
 ]
 
@@ -57,19 +60,19 @@ initial_groups = [
 
 # finance transactions January of 2024
 
-finance_transactions_nubank_mamae = [ # 2
+finance_transactions_nubank_mamae = [ # dates OK
   {
     "title": "Madeira Cama",
-    "purchase_date": "26-12-2023",
+    "purchase_date": "27-09-2023",
     "group": 'Cartao de Credito Nubank Mamae',
-    "installments": "04/10",
+    "installments": "05/10",
     "real_amount": 210.53
   },
   {
     "title": "Notebook Dell",
-    "purchase_date": "26-12-2023",
+    "purchase_date": "21-07-2023",
     "group": 'Cartao de Credito Nubank Mamae',
-    "installments": "07/12",
+    "installments": "08/12",
     "real_amount": 708.44
   },
   {
@@ -148,7 +151,7 @@ finance_transactions_nubank_mamae = [ # 2
     "real_amount": 43
   },
   {
-    "title": "Sodine",
+    "title": "Sodine store",
     "purchase_date": "07-01-2024",
     "group": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
     "installments": '',
@@ -216,7 +219,7 @@ finance_transactions_nubank_mamae = [ # 2
   }
 ]
 
-finance_transactions_nubank_ryan = [
+finance_transactions_nubank_ryan = [# dates OK
   {
    "title": "Herman Miller",
    "purchase_date": "27-12-2023",
@@ -254,82 +257,103 @@ finance_transactions_nubank_ryan = [
   }
 ]
 
-finance_transactions_pic_pay = [
+finance_transactions_pic_pay = [# dates OK
   {
    "title": "Amazon Subwoofer",
-   "purchase_date": "28-05-2023",
+   "purchase_date": "28-06-2023",
    "group": 'Cartao de Credito Pic Pay',
    "installments": "6/10",
    "real_amount": 265.10
   },
 ]
 
-finance_transactions_despesas = [
+finance_transactions_despesas = [ #check after...
   {
    "title": "IPVA",
-   "purchase_date": "02-01-2024",
+   "payment_date": "02-01-2024",
    "installments": '',
    "group": 'Despesas',
    "real_amount": 1982.09
   },
   {
    "title": "Colegio Maria Julia",
-   "purchase_date": "02-01-2024",
+   "payment_date": "02-01-2024",
    "installments": '',
    "group": ['Mensalidade Luana', 'Despesas'],
    "payers": "Luana,Ryan",
-   "real_amount": 700
+   "real_amount": 650
   },
   {
-   "title": "Material Escolar Maria J",
-   "purchase_date": "03-01-2024",
+   "title": "Material Escolar Maria Julia",
+   "payment_date": "03-01-2024",
    "installments": '',
    "group": ['Mensalidade Luana', 'Despesas'],
    "payers": "Luana,Ryan",
    "real_amount": 590
   },
   {
-   "title": "Wilson Dantas Milho",
-   "purchase_date": "05-01-2024",
+   "title": "Wilson Dantas",
+   "payment_date": "05-01-2024",
    "installments": '',
    "group": 'Despesas',
    "real_amount": 5
   },
   {
-   "title": "Wilson Dantas Milho",
-   "purchase_date": "05-01-2024",
+   "title": "Wilson Dantas",
+   "payment_date": "05-01-2024",
    "installments": '',
    "group": 'Despesas',
    "real_amount": 5
   },
   {
    "title": "Raxa BNB",
-   "purchase_date": "09-01-2024",
+   "payment_date": "09-01-2024",
    "installments": '',
    "group": 'Despesas',
    "real_amount": 20
   },
   {
    "title": "Grafica Point S Com",
-   "purchase_date": "11-01-2024",
+   "payment_date": "11-01-2024",
    "installments": '',
    "group": 'Despesas',
    "real_amount": 26
   },
   {
    "title": "Raxa BNB Mensalidade",
-   "purchase_date": "15-01-2024",
+   "payment_date": "15-01-2024",
    "installments": '',
    "group": 'Despesas',
    "real_amount": 60
-  }
+  },
+  # {
+  #  "title": "XP investimentos",
+  #  "payment_date": "02-01-2024",
+  #  "installments": '',
+  #  "group": 'Despesas',
+  #  "real_amount": 1000
+  # },
+  # {
+  #  "title": "Pagamento PicPay",
+  #  "payment_date": "03-01-2024",
+  #  "installments": '',
+  #  "group": 'Despesas',
+  #  "real_amount": 265.10
+  # },
+  # {
+  #  "title": "Pagamento Cartao Nubank Mamae",
+  #  "payment_date": "30-01-2024",
+  #  "installments": '',
+  #  "group": 'Despesas',
+  #  "real_amount": 3325.85
+  # },
 ]
 
-acount_transactions_mensalidade_luana = [
+acount_transactions_mensalidade_luana = [#check after
   {
     "kind": "revenue",
     "title": "Plano de saude",
-    "purchase_date": "10-01-2024",
+    "payment_date": "16-02-2024",
     "installments": '',
     "group": 'Mensalidade Luana',
     "payers": "Luana",
@@ -338,7 +362,7 @@ acount_transactions_mensalidade_luana = [
   {
     "kind": "revenue",
     "title": "Alimentacao",
-    "purchase_date": "10-01-2024",
+    "payment_date": "16-02-2024",
     "installments": '',
     "group": 'Mensalidade Luana',
     "payers": "Luana",
@@ -347,7 +371,7 @@ acount_transactions_mensalidade_luana = [
   {
     "kind": "revenue",
     "title": "Necesser",
-    "purchase_date": "10-01-2024",
+    "payment_date": "16-02-2024",
     "installments": '',
     "group": 'Mensalidade Luana',
     "payers": "Luana",
@@ -356,7 +380,7 @@ acount_transactions_mensalidade_luana = [
   {
     "kind": "revenue",
     "title": "A parte",
-    "purchase_date": "10-01-2024",
+    "payment_date": "16-02-2024",
     "installments": '',
     "group": 'Mensalidade Luana',
     "payers": "Luana",
@@ -367,14 +391,14 @@ acount_transactions_mensalidade_luana = [
 finance_transactions_investimentos = [
   {
     "title": "Fundos imobiliarios",
-    "purchase_date": "02-01-2024",
+    "payment_date": "02-01-2024",
     "installments": '',
     "group": 'Investimentos',
     "real_amount": 500
   },
   {
     "title": "Acoes",
-    "purchase_date": "02-01-2024",
+    "payment_date": "02-01-2024",
     "installments": '',
     "group": 'Investimentos',
     "real_amount": 500
@@ -385,7 +409,7 @@ finance_transactions_receitas = [
   {
     "kind": "revenue",
     "title": "Salario",
-    "purchase_date": "30-01-2024",
+    "payment_date": "30-01-2024",
     "installments": '',
     "group": 'Receitas',
     "payers": "IA",
@@ -394,14 +418,190 @@ finance_transactions_receitas = [
   {
     "kind": "revenue",
     "title": "Ressalva ppay",
-    "purchase_date": "30-01-2024",
+    "payment_date": "02-02-2024",
     "installments": '',
     "group": 'Receitas',
+    "payers": "Mae",
     "real_amount": 1500
   }
 ]
 
 # finance transactions January of 2024
+
+# finance transactions Febuary of 2024
+
+finance_transactions_nubank_mamae_feb = [ # dates OK
+  {
+    "title": "Madeira Cama",
+    "purchase_date": "27-09-2023",
+    "group": 'Cartao de Credito Nubank Mamae',
+    "installments": "05/10",
+    "real_amount": 210.53
+  },
+  {
+    "title": "Notebook Dell",
+    "purchase_date": "21-07-2023",
+    "group": 'Cartao de Credito Nubank Mamae',
+    "installments": "08/12",
+    "real_amount": 708.44
+  },
+  {
+    "title": "MP GuicheWeb Circo Americano",
+    "purchase_date": "27-01-2024",
+    "group": 'Cartao de Credito Nubank Mamae',
+    "installments": "08/12",
+    "real_amount": 160.50
+  },
+  {
+    "title": "Amazon Prime Canais",
+    "purchase_date": "12-02-2024",
+    "group": 'Cartao de Credito Nubank Mamae',
+    "installments": '',
+    "real_amount": 29.90
+  },
+  {
+    "title": "Silcar Veiculos Evaporadora",
+    "purchase_date": "16-02-2024",
+    "group": 'Cartao de Credito Nubank Mamae',
+    "installments": "1/3",
+    "real_amount": 280.64
+  },
+]
+
+finance_transactions_nubank_ryan_feb = [# dates OK
+  {
+   "title": "Herman Miller",
+   "purchase_date": "27-12-2023",
+   "group": 'Cartao de Credito Nubank Ryan',
+   "installments": "3/12",
+   "real_amount": 954.68
+  },
+  {
+   "title": "Mercado Livre Cabo Thunderbolt",
+   "purchase_date": "01-02-2024",
+   "group": 'Cartao de Credito Nubank Ryan',
+   "installments": '',
+   "real_amount": 179.99
+  },
+  {
+   "title": "Fix Pay Bateria",
+   "purchase_date": "01-02-2024",
+   "group": 'Cartao de Credito Nubank Ryan',
+   "installments": '',
+   "real_amount": 440.00
+  },
+
+  {
+   "title": "Amazon",
+   "purchase_date": "05-02-2024",
+   "group": 'Cartao de Credito Nubank Ryan',
+   "installments": '',
+   "real_amount": 42.90
+  },
+  {
+   "title": "Uhuu Dzo Ingresso Renato Albani",
+   "purchase_date": "08-02-2024",
+   "group": ['Mensalidade Luana', 'Cartao de Credito Nubank Ryan'],
+   "payers": "Luana,Ryan",
+   "installments": '',
+   "real_amount": 144.00
+  },
+  {
+   "title": "Pag Francisca Mao de Obra Val. Expansao",
+   "purchase_date": "08-02-2024",
+   "group": 'Cartao de Credito Nubank Ryan',
+   "installments": '',
+   "real_amount": 390.00
+  },
+  {
+   "title": "T.R Maia Performance Sup - Mensalidade Jiu-Jistu MJ",
+   "purchase_date": "09-02-2024",
+   "group": ['Mensalidade Luana', 'Cartao de Credito Nubank Ryan'],
+   "payers": "Luana,Ryan",
+   "installments": '',
+   "real_amount": 150
+  },
+  {
+   "title": "T.R Maia Performance Sup - Matricula Jiu-Jistu MJ",
+   "purchase_date": "09-02-2024",
+   "group": ['Mensalidade Luana', 'Cartao de Credito Nubank Ryan'],
+   "payers": "Luana,Ryan",
+   "installments": '',
+   "real_amount": 40
+  },
+  {
+   "title": "Smart Fit",
+   "purchase_date": "14-02-2024",
+   "group": 'Cartao de Credito Nubank Ryan',
+   "installments": '',
+   "real_amount": 109.90
+  },
+  {
+   "title": "Vivo Controle",
+   "purchase_date": "15-02-2024",
+   "group": 'Cartao de Credito Nubank Ryan',
+   "installments": '',
+   "real_amount": 54.99
+  }
+]
+
+finance_transactions_pic_pay_feb = [# dates OK
+  {
+   "title": "Amazon Subwoofer",
+   "purchase_date": "28-06-2023",
+   "group": 'Cartao de Credito Pic Pay',
+   "installments": "7/10",
+   "real_amount": 265.10
+  },
+]
+
+finance_transactions_despesas_feb = [ #check after...
+  {
+   "title": "Colegio Maria Julia",
+   "payment_date": "02-01-2024",
+   "installments": '',
+   "group": ['Mensalidade Luana', 'Despesas'],
+   "payers": "Luana,Ryan",
+   "real_amount": 700
+  }
+]
+
+acount_transactions_mensalidade_luana_feb = [#check after
+  {
+    "kind": "revenue",
+    "title": "Plano de saude",
+    "installments": '',
+    "group": 'Mensalidade Luana',
+    "payers": "Luana",
+    "real_amount": 200
+  },
+  {
+    "kind": "revenue",
+    "title": "Alimentacao",
+    "installments": '',
+    "group": 'Mensalidade Luana',
+    "payers": "Luana",
+    "real_amount": 150
+  },
+  
+]
+
+finance_transactions_investimentos_feb = [
+  {
+    "title": "Fundos imobiliarios",
+    "installments": '',
+    "group": 'Investimentos',
+    "real_amount": 500
+  },
+  {
+    "title": "Acoes",
+    "installments": '',
+    "group": 'Investimentos',
+    "real_amount": 500
+  }
+]
+
+# finance transactions Febuary of 2024
                                     
 def create_payers(payers)
   payers.each do |payer|
@@ -429,7 +629,7 @@ def create_groups(groups)
   end
 end
 
-def create_finance_transactions_and_payers(finance_transactions)
+def create_finance_transactions_and_payers(finance_transactions, month)
   finance_transactions.each do |finance_transaction|
     if finance_transaction[:group].is_a?(Array)
       finance_transaction[:group].each_with_index do |group_name, index|
@@ -439,10 +639,12 @@ def create_finance_transactions_and_payers(finance_transactions)
 
         attributes = {
           title: finance_transaction[:title],
-          purchase_date: finance_transaction[:purchase_date],
           installments: finance_transaction[:installments],
           real_amount: payer.name == 'Ryan' ? finance_transaction[:real_amount] : finance_transaction[:real_amount] / payers_name.size
         }
+
+        attributes.merge!(purchase_date: finance_transaction[:purchase_date]) if finance_transaction[:purchase_date].present?
+        attributes.merge!(payment_date: finance_transaction[:payment_date]) if finance_transaction[:payment_date].present?
 
         if finance_transaction[:kind].present?
           attributes.merge!(kind: finance_transaction[:kind])
@@ -463,7 +665,8 @@ def create_finance_transactions_and_payers(finance_transactions)
 
         group_finance_transaction_created = GroupsFinanceTransaction.create!(
           finance_transaction: finance_transaction_created,
-          group: group
+          group: group,
+          month: month
         )
 
         puts "Create group finance transaction: #{group_finance_transaction_created.attributes}"
@@ -474,10 +677,12 @@ def create_finance_transactions_and_payers(finance_transactions)
 
       attributes = {
         title: finance_transaction[:title],
-        purchase_date: finance_transaction[:purchase_date],
         installments: finance_transaction[:installments],
         real_amount: finance_transaction[:real_amount]
       }
+
+      attributes.merge!(purchase_date: finance_transaction[:purchase_date]) if finance_transaction[:purchase_date].present?
+      attributes.merge!(payment_date: finance_transaction[:payment_date]) if finance_transaction[:payment_date].present?
 
       if finance_transaction[:kind].present?
         attributes.merge!(kind: finance_transaction[:kind])
@@ -498,7 +703,8 @@ def create_finance_transactions_and_payers(finance_transactions)
 
       group_finance_transaction_created = GroupsFinanceTransaction.create!(
           finance_transaction: finance_transaction_created,
-          group: group
+          group: group,
+          month: month
         )
 
         puts "Create group finance transaction: #{group_finance_transaction_created.attributes}"
@@ -518,14 +724,25 @@ create_groups(initial_groups)
 
 puts "Groups created"
 
-puts "Creating finance transactions..."
+puts "Creating finance transactions of January..."
 
-create_finance_transactions_and_payers(finance_transactions_nubank_mamae)
-create_finance_transactions_and_payers(finance_transactions_nubank_ryan)
-create_finance_transactions_and_payers(finance_transactions_pic_pay)
-create_finance_transactions_and_payers(finance_transactions_despesas)
-create_finance_transactions_and_payers(acount_transactions_mensalidade_luana)
-create_finance_transactions_and_payers(finance_transactions_investimentos)
-create_finance_transactions_and_payers(finance_transactions_receitas)
+create_finance_transactions_and_payers(finance_transactions_nubank_mamae, 'january')
+create_finance_transactions_and_payers(finance_transactions_nubank_ryan, 'january')
+create_finance_transactions_and_payers(finance_transactions_pic_pay, 'january')
+create_finance_transactions_and_payers(finance_transactions_despesas, 'january')
+create_finance_transactions_and_payers(acount_transactions_mensalidade_luana, 'january')
+create_finance_transactions_and_payers(finance_transactions_investimentos, 'january')
+create_finance_transactions_and_payers(finance_transactions_receitas, 'january')
 
-puts "Finance transactions created"
+puts "Finance transactions created January"
+
+puts "Creating finance transactions of Febuary..."
+
+create_finance_transactions_and_payers(finance_transactions_nubank_mamae_feb, 'febuary')
+create_finance_transactions_and_payers(finance_transactions_nubank_ryan_feb, 'febuary')
+create_finance_transactions_and_payers(finance_transactions_pic_pay_feb, 'febuary')
+create_finance_transactions_and_payers(finance_transactions_despesas_feb, 'febuary')
+create_finance_transactions_and_payers(acount_transactions_mensalidade_luana_feb, 'febuary')
+create_finance_transactions_and_payers(finance_transactions_investimentos_feb, 'febuary')
+
+puts "Finance transactions created Febuary"
