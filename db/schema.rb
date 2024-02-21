@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_20_104853) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_21_155935) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_20_104853) do
     t.decimal "real_amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "payment_date"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -38,6 +39,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_20_104853) do
     t.bigint "finance_transaction_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "year"
+    t.string "month"
     t.index ["finance_transaction_id"], name: "index_groups_finance_transactions_on_finance_transaction_id"
     t.index ["group_id"], name: "index_groups_finance_transactions_on_group_id"
   end
