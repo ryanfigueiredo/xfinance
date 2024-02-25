@@ -1,4 +1,4 @@
-class PayerController < ApplicationController
+class PayersController < ApplicationController
   before_action :set_month
   
   def index

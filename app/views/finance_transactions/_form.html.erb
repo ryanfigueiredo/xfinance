@@ -1,0 +1,36 @@
+<%= form_with url: finance_transactions_path, class: "row g-3 align-items-center" do |form| %>
+  <div class="col-2">
+    <%= form.fields_for :groups_finance_transactions do |gft_builder| %>
+      <%= gft_builder.select :group_id, @groups, {}, { class: "form-select" }  %>
+    <% end %>
+  </div>
+
+  <div class="col-2">
+    <%= select("finance_transaction", "kind", FinanceTransaction.kinds.map{ |ft_text, ft_id| [ft_text, ft_id] }, { selected: 1 }, { class: "form-select" }) %>
+  </div>
+
+  <div class="col-2">
+    <%= form.date_field :purchase_date, class: "form-control" %>
+  </div>
+
+  <div class="col-2">
+    <%= form.text_field :title, class: "form-control", placeholder: "Title" %>
+  </div>
+
+  <div class="col-1">
+    <%= form.number_field :installments, class: "form-control", placeholder: "Installments" %>
+  </div>
+
+  <div class="col-1">
+    <%= form.number_field :real_amount, class: "form-control", placeholder: "Amount" %>
+  </div>
+
+  <div class="col">
+    <%= form.submit 'Save', class: "btn btn-outline-success" %>
+    <button class="btn btn-outline-danger" id="cancel-add-finance-transaction" 
+      data-controller="dashboard" data-action="click->dashboard#toggleFilterAddTableFinanceTransactions" 
+      type="button" data-dashboard-hidden-param="true">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+<% end %>

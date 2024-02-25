@@ -10,10 +10,25 @@ class FinanceTransaction < ApplicationRecord
   validates :real_amount, presence: true
 
   before_save :validate_installments
+
+  accepts_nested_attributes_for :groups_finance_transactions
   # before_save :validate_fake_amount
 
   enum :kind, { revenue: 0, expense: 1 }, default: :expense
-  
+
+  scope :per_month, ->(month) {
+    includes(:payers, :groups)
+    .joins(:groups)
+    .joins(:groups_finance_transactions)
+    .where(groups_finance_transactions: { month: month })
+  }
+
+  scope :by_groups, -> {
+    group_by do |finance_transaction|
+      [finance_transaction.groups.first.title, finance_transaction.groups.first.id]
+    end
+  }
+
   def validate_installments
     self.installments = 'Cash' if self.installments.blank? 
   end

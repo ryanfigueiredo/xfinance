@@ -1,4 +1,4 @@
-class GroupController < ApplicationController
+class GroupsController < ApplicationController
   before_action :set_month, :set_group, :build_query, only: :show
 
   def index

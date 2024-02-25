@@ -1,7 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/dashboard">Dashboard</a>
-    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,27 +7,33 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/group">Groups</a>
+          <a class="nav-link active" href="/dashboard">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/payer">Payers</a>
+          <a class="nav-link active" href="/group">Groups</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/payer">Payers</a>
         </li>
       </ul>
 
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <div class="fields-form-add-finance-transaction" hidden>
+        <%= render "finance_transactions/form" %>
+      </div>
+
+      <div class="d-flex">
+        <input type="text" data-controller="dashboard" 
+          class="form-control field-filter me-2" id="filter-title" 
+          placeholder="Filter by title" 
+          data-action="keyup->dashboard#filterTableFinanceTransactions">
+
+        <button class="btn btn-outline-success field-filter" data-controller="dashboard" id="add-finance-transaction" 
+          data-action="click->dashboard#toggleFilterAddTableFinanceTransactions" data-dashboard-hidden-param="false" type="button">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
     </div>
   </div>
 </nav>
 
-<% if request.path != '/group' %>
-  <ul class="py-2 nav justify-content-center nav-pills">
-    <% months_of_year.each do |month| %>
-      <li class="nav-item">
-        <a class="nav-link <%= current_month.camelize == month && 'active' %>" href="<%= path_month(month) %>"><%= month %></a>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render "layouts/nav_months" %>

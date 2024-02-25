@@ -1,0 +1,20 @@
+<% if request.path != '/group' %>
+  <ul class="py-2 nav justify-content-center nav-pills">
+    <% if request.path.include?('dashboard') %><div class="ms-auto p-2"></div><% end %>
+    
+    <% months_of_year.each do |month| %>
+      <li class="nav-item">
+        <a class="nav-link <%= current_month.camelize == month && 'active' %>" href="<%= path_month(month) %>"><%= month %></a>
+      </li>
+    <% end %>
+
+    <% if request.path.include?('dashboard') %>
+      <div class="ms-auto p-2 me-3">
+          <a href="<%= path_month(current_month) %>?&view=table"><i class="fa-solid fa-table me-3 link-opacity-50-hover link-secondary"></i></a>
+          <a href="<%= path_month(current_month) %>?&view=group"><i class="fa-solid fa-layer-group link-opacity-50-hover link-secondary"></i></a>
+      </div>
+    <% end %>
+  </ul>
+<% end %>
+
+

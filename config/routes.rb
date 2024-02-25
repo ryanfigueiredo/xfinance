@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#index'
   get '/dashboard/:month', to: 'dashboard#index'
 
-  get '/finance_transaction', to: 'finance_transaction#index'
+  resources :finance_transactions
 
   get '/group', to: 'group#index'
   get '/group/:id', to: 'group#show'
@@ -19,4 +19,6 @@ Rails.application.routes.draw do
 
   get '/payer', to: 'payer#index'
   get '/payer/:month', to: 'payer#index'
+
+  get '/test', to: 'test#index'
 end

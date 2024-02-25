@@ -1,4 +1,4 @@
-class CreatePayersFinanceTransaction < ActiveRecord::Migration[7.1]
+class CreatePayersFinanceTransactions < ActiveRecord::Migration[7.1]
   def change
     create_table :payers_finance_transactions do |t|
       t.references :payer, null: false, foreign_key: true

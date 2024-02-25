@@ -10,8 +10,14 @@ class DashboardController < ApplicationController
   end
 
   def build_query
-    @finance_transactions = FinanceTransaction.includes(:payers, :groups)
+    @view = params[:view]
+
+    if @view.present? && @view == 'group'
+      @groups_finance_transactions = FinanceTransaction.per_month(@month).by_groups
+    else
+      @groups_finance_transactions = FinanceTransaction.includes(:payers, :groups)
                                               .joins(:groups_finance_transactions)
                                               .where(groups_finance_transactions: { month: @month })
+    end
   end
 end
