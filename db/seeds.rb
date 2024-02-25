@@ -10,6 +10,9 @@ initial_payers = [
   },
   {
     "name": "Mae"
+  },
+  {
+    "name": "Pai"
   }
 ]
 
