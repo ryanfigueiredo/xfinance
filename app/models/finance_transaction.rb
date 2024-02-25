@@ -2,7 +2,7 @@ class FinanceTransaction < ApplicationRecord
   has_many :payers_finance_transactions
   has_many :payers, :through => :payers_finance_transactions
 
-  has_many :groups_finance_transactions
+  has_many :groups_finance_transactions, dependent: :destroy
   has_many :groups, :through => :groups_finance_transactions
 
   validates :title, presence: true
@@ -10,6 +10,7 @@ class FinanceTransaction < ApplicationRecord
   validates :real_amount, presence: true
 
   before_save :validate_installments
+  before_save :set_purchase_date
 
   accepts_nested_attributes_for :groups_finance_transactions
   # before_save :validate_fake_amount
@@ -35,5 +36,9 @@ class FinanceTransaction < ApplicationRecord
 
   def validate_fake_amount
     self.fake_amount = self.real_amount if self.fake_amount.blank?
+  end
+
+  def set_purchase_date
+    self.purchase_date = Date.today if self.purchase_date.nil?
   end
 end

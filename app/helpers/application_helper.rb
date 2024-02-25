@@ -19,7 +19,7 @@ module ApplicationHelper
   def months_of_year
     [
       'January',
-      'Febuary',
+      'February',
       'March',
       'April',
       'May',

@@ -431,7 +431,7 @@ finance_transactions_receitas = [
 
 # finance transactions January of 2024
 
-# finance transactions Febuary of 2024
+# finance transactions February of 2024
 
 finance_transactions_nubank_mamae_feb = [ # dates OK
   {
@@ -604,7 +604,7 @@ finance_transactions_investimentos_feb = [
   }
 ]
 
-# finance transactions Febuary of 2024
+# finance transactions February of 2024
                                     
 def create_payers(payers)
   payers.each do |payer|
@@ -739,13 +739,13 @@ create_finance_transactions_and_payers(finance_transactions_receitas, 'january')
 
 puts "Finance transactions created January"
 
-puts "Creating finance transactions of Febuary..."
+puts "Creating finance transactions of February..."
 
-create_finance_transactions_and_payers(finance_transactions_nubank_mamae_feb, 'febuary')
-create_finance_transactions_and_payers(finance_transactions_nubank_ryan_feb, 'febuary')
-create_finance_transactions_and_payers(finance_transactions_pic_pay_feb, 'febuary')
-create_finance_transactions_and_payers(finance_transactions_despesas_feb, 'febuary')
-create_finance_transactions_and_payers(acount_transactions_mensalidade_luana_feb, 'febuary')
-create_finance_transactions_and_payers(finance_transactions_investimentos_feb, 'febuary')
+create_finance_transactions_and_payers(finance_transactions_nubank_mamae_feb, 'February')
+create_finance_transactions_and_payers(finance_transactions_nubank_ryan_feb, 'February')
+create_finance_transactions_and_payers(finance_transactions_pic_pay_feb, 'February')
+create_finance_transactions_and_payers(finance_transactions_despesas_feb, 'February')
+create_finance_transactions_and_payers(acount_transactions_mensalidade_luana_feb, 'February')
+create_finance_transactions_and_payers(finance_transactions_investimentos_feb, 'February')
 
-puts "Finance transactions created Febuary"
+puts "Finance transactions created February"

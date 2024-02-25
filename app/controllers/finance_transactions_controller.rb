@@ -2,9 +2,6 @@ class FinanceTransactionsController < ApplicationController
   def index; end
 
   def create
-    
-    
-    binding.pry
     @finance_transaction = FinanceTransaction.build(finance_transaction_params)
 
     respond_to do |format| #.... WIP

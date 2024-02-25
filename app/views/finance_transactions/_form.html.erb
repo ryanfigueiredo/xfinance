@@ -1,4 +1,6 @@
-<%= form_with url: finance_transactions_path, class: "row g-3 align-items-center" do |form| %>
+<% @finance = FinanceTransaction.new.tap{|f| f.groups_finance_transactions.build }  %>
+
+<%= form_with model: @finance, class: "row g-3 align-items-center" do |form| %>
   <div class="col-2">
     <%= form.fields_for :groups_finance_transactions do |gft_builder| %>
       <%= gft_builder.select :group_id, @groups, {}, { class: "form-select" }  %>
@@ -6,7 +8,7 @@
   </div>
 
   <div class="col-2">
-    <%= select("finance_transaction", "kind", FinanceTransaction.kinds.map{ |ft_text, ft_id| [ft_text, ft_id] }, { selected: 1 }, { class: "form-select" }) %>
+    <%= select("finance_transaction", "kind", FinanceTransaction.kinds.map{ |ft_text, ft_id| [ft_text, ft_text] }, { selected: 1 }, { class: "form-select" }) %>
   </div>
 
   <div class="col-2">
