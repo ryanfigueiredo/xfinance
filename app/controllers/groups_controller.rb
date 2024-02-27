@@ -9,10 +9,6 @@ class GroupsController < ApplicationController
 
   private
 
-  def set_month
-    @month = params[:month].present? ? params[:month].downcase : current_month.downcase
-  end
-
   def set_group
     @group = Group.find(params[:id])
   end

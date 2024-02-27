@@ -5,10 +5,6 @@ class DashboardController < ApplicationController
 
   private
 
-  def set_month
-    @month = params[:month].present? ? params[:month].downcase : current_month.downcase
-  end
-
   def build_query
     @view = params[:view]
 
