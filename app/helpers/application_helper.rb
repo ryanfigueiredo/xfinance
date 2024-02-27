@@ -36,4 +36,12 @@ module ApplicationHelper
   def sum_total_transactions(finance_transactions)
     finance_transactions.sum{ |ft| ft.revenue? ? ft.real_amount : -ft.real_amount }
   end
+
+  def render_links_navbar
+    ['Dashboard', 'Groups', 'Payers'].map do |item|
+      '<li class="nav-item">' +
+        link_to(item, "#{item.downcase}_path", { class: 'nav-link active' }) +
+      '</li>'
+    end
+  end
 end

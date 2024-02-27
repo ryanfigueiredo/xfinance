@@ -13,12 +13,12 @@ Rails.application.routes.draw do
 
   resources :finance_transactions
 
-  get '/group', to: 'group#index'
-  get '/group/:id', to: 'group#show'
-  get '/group/:id/:month', to: 'group#show'
+  get '/groups', to: 'groups#index'
+  get '/groups/:id', to: 'groups#show'
+  get '/groups/:id/:month', to: 'groups#show'
 
-  get '/payer', to: 'payer#index'
-  get '/payer/:month', to: 'payer#index'
+  get '/payers', to: 'payers#index'
+  get '/payers/:month', to: 'payers#index'
 
   get '/test', to: 'test#index'
 end
