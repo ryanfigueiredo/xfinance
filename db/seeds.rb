@@ -604,6 +604,36 @@ finance_transactions_investimentos_feb = [
   }
 ]
 
+finance_transactions_receitas_feb = [
+  {
+    "kind": "revenue",
+    "title": "Salario",
+    "payment_date": "29-02-2024",
+    "installments": '',
+    "group": 'Receitas',
+    "payers": "IA",
+    "real_amount": 6030.12
+  },
+  {
+    "kind": "revenue",
+    "title": "Dinheiro Aniversario",
+    "payment_date": "02-02-2024",
+    "installments": '',
+    "group": 'Receitas',
+    "payers": "Pai",
+    "real_amount": 200
+  },
+  {
+    "kind": "revenue",
+    "title": "Dinheiro saco de lixo tio JR",
+    "payment_date": "17-02-2024",
+    "installments": '',
+    "group": 'Receitas',
+    "payers": "Pai",
+    "real_amount": 30
+  }
+]
+
 # finance transactions February of 2024
                                     
 def create_payers(payers)
@@ -747,5 +777,6 @@ create_finance_transactions_and_payers(finance_transactions_pic_pay_feb, 'Februa
 create_finance_transactions_and_payers(finance_transactions_despesas_feb, 'February')
 create_finance_transactions_and_payers(acount_transactions_mensalidade_luana_feb, 'February')
 create_finance_transactions_and_payers(finance_transactions_investimentos_feb, 'February')
+create_finance_transactions_and_payers(finance_transactions_receitas_feb, 'February')
 
 puts "Finance transactions created February"
