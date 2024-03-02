@@ -1,0 +1,11 @@
+<div class="d-flex">
+  <input type="text" data-controller="dashboard"
+    class="form-control field-filter me-2" id="filter-title" 
+    placeholder="Filter by title"
+    data-action="keyup->dashboard#filterTableFinanceTransactions">
+
+  <button class="btn btn-outline-success field-filter" data-controller="dashboard" id="add-finance-transaction"
+    data-action="click->dashboard#toggleFilterAddTableFinanceTransactions" data-dashboard-hidden-param="false" type="button">
+    <i class="fa-solid fa-plus"></i>
+  </button>
+</div>

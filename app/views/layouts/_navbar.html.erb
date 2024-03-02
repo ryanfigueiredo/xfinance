@@ -5,7 +5,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 field-filter">
         <% ['Dashboard', 'Groups', 'Payers'].map do |item| %>
           <li class="nav-item">
             <%= link_to(item, "/#{item.downcase}", { class: 'nav-link active' }) %>
@@ -17,17 +17,7 @@
         <%= render "finance_transactions/form" %>
       </div>
 
-      <div class="d-flex">
-        <input type="text" data-controller="dashboard" 
-          class="form-control field-filter me-2" id="filter-title" 
-          placeholder="Filter by title" 
-          data-action="keyup->dashboard#filterTableFinanceTransactions">
-
-        <button class="btn btn-outline-success field-filter" data-controller="dashboard" id="add-finance-transaction" 
-          data-action="click->dashboard#toggleFilterAddTableFinanceTransactions" data-dashboard-hidden-param="false" type="button">
-          <i class="fa-solid fa-plus"></i>
-        </button>
-      </div>
+      <%= render "layouts/filter_by" %>
     </div>
   </div>
 </nav>

@@ -1,6 +1,10 @@
-<% @finance = FinanceTransaction.new.tap{|f| f.groups_finance_transactions.build }  %>
-
 <%= form_with model: @finance, class: "row g-3 align-items-center" do |form| %>
+  <div class="col-1">
+    <%= form.fields_for :payers_finance_transactions do |pft_builder| %>
+      <%= pft_builder.select :payer_id, @payers, {}, { class: "form-select" }  %>
+    <% end %>
+  </div>
+
   <div class="col-2">
     <%= form.fields_for :groups_finance_transactions do |gft_builder| %>
       <%= gft_builder.select :group_id, @groups, {}, { class: "form-select" }  %>
@@ -8,7 +12,7 @@
   </div>
 
   <div class="col-2">
-    <%= select("finance_transaction", "kind", FinanceTransaction.kinds.map{ |ft_text, ft_id| [ft_text, ft_text] }, { selected: 1 }, { class: "form-select" }) %>
+    <%= select("finance_transaction", "kind", finance_transaction_kinds, {}, { class: "form-select" }) %>
   </div>
 
   <div class="col-2">
@@ -27,7 +31,7 @@
     <%= form.number_field :real_amount, class: "form-control", placeholder: "Amount" %>
   </div>
 
-  <div class="col">
+  <div class="col-1 text-end">
     <%= form.submit 'Save', class: "btn btn-outline-success" %>
     <button class="btn btn-outline-danger" id="cancel-add-finance-transaction" 
       data-controller="dashboard" data-action="click->dashboard#toggleFilterAddTableFinanceTransactions" 

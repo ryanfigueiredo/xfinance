@@ -31,4 +31,8 @@ module ApplicationHelper
   def sum_total_transactions(finance_transactions)
     finance_transactions.sum{ |ft| ft.revenue? ? ft.real_amount : -ft.real_amount }
   end
+
+  def finance_transaction_kinds
+    FinanceTransaction.kinds.map{ |ft_text, ft_id| [ft_text, ft_text] }
+  end
 end

@@ -9,7 +9,7 @@ class FinanceTransactionsController < ApplicationController
         format.html { redirect_to dashboard_path, notice: 'finance_transaction was successfully created.' }
         format.json { render :show, status: :created, location: @finance_transaction }
       else
-        format.html { redirect_to dashboard_path, alert: "finance_transaction not created" }
+        format.html { redirect_to dashboard_path, alert: @finance_transaction.errors.full_messages.to_sentence }
         format.json { render json: @finance_transaction.errors, status: :unprocessable_entity }
       end
     end
@@ -24,7 +24,8 @@ class FinanceTransactionsController < ApplicationController
       :purchase_date,
       :real_amount,
       :installments,
-      groups_finance_transactions_attributes: [:group_id]
+      groups_finance_transactions_attributes: [:group_id],
+      payers_finance_transactions_attributes: [:payer_id]
     )
   end
 end
