@@ -20,7 +20,7 @@ class DashboardController < ApplicationController
   end
 
   def set_build_accepts_nested_attributes_for
-    @finance = FinanceTransaction.new.tap do |ft|
+    @finance_transaction = FinanceTransaction.new.tap do |ft|
       ft.groups_finance_transactions.build
       ft.payers_finance_transactions.build
     end

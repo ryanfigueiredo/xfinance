@@ -1,4 +1,4 @@
-<%= form_with model: @finance, class: "row g-3 align-items-center" do |form| %>
+<%= form_with model: finance_transaction, class: "row g-3 align-items-center" do |form| %>
   <div class="col-1">
     <%= form.fields_for :payers_finance_transactions do |pft_builder| %>
       <%= pft_builder.select :payer_id, @payers, {}, { class: "form-select" }  %>
@@ -33,8 +33,8 @@
 
   <div class="col-1 text-end">
     <%= form.submit 'Save', class: "btn btn-outline-success" %>
-    <button class="btn btn-outline-danger" id="cancel-add-finance-transaction" 
-      data-controller="dashboard" data-action="click->dashboard#toggleFilterAddTableFinanceTransactions" 
+    <button class="btn btn-outline-danger" id="cancel-add-finance-transaction"
+      data-controller="dashboard" data-action="click->dashboard#toggleFilterAddTableFinanceTransactions"
       type="button" data-dashboard-hidden-param="true">
       <i class="fa-solid fa-xmark"></i>
     </button>
