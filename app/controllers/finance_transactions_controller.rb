@@ -2,15 +2,25 @@ class FinanceTransactionsController < ApplicationController
   def index; end
 
   def create
-    @finance_transaction = FinanceTransaction.build(finance_transaction_params)
+    finance_transaction = FinanceTransaction.build(finance_transaction_params)
 
-    respond_to do |format| #.... WIP
-      if @finance_transaction.save
-        format.html { redirect_to dashboard_path, notice: 'finance_transaction was successfully created.' }
-        format.json { render :show, status: :created, location: @finance_transaction }
+    respond_to do |format|
+      if finance_transaction.save
+        format.html { redirect_to dashboard_path, notice: 'finance transaction was successfully created.' }
       else
-        format.html { redirect_to dashboard_path, alert: @finance_transaction.errors.full_messages.to_sentence }
-        format.json { render json: @finance_transaction.errors, status: :unprocessable_entity }
+        format.html { redirect_to dashboard_path, alert: finance_transaction.errors.full_messages.to_sentence }
+      end
+    end
+  end
+
+  def destroy
+    finance_transaction = FinanceTransaction.find(params[:id])
+
+    respond_to do |format|
+      if finance_transaction.destroy
+        format.html { redirect_to dashboard_path, notice: 'finance transaction was successfully deleted.' }
+      else
+        format.html { redirect_to dashboard_path, alert: finance_transaction.errors.full_messages.to_sentence }
       end
     end
   end

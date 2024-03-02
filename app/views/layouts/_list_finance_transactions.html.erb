@@ -8,6 +8,7 @@
       <th scope="col">Payers</th>
       <th scope="col">Group</th>
       <th scope="col">Amount</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +21,10 @@
         <td><%= finance_transaction.payers.map(&:name).join(", ") %></td>
         <td><%= finance_transaction.groups.first.title %></td>
         <td>R$ <%= finance_transaction.real_amount %></td>
+        <td>
+          <%= button_to '<i class="fa-solid fa-pencil"></i>'.html_safe, finance_transaction_path(finance_transaction.id), class: "btn btn-outline-primary", form_class: "d-inline-block", method: :put  %>
+          <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, finance_transaction_path(finance_transaction.id), class: "btn btn-outline-danger", form_class: "d-inline-block", method: :delete  %>
+        </td>
       </tr>
     <% end %>
     <tr>
