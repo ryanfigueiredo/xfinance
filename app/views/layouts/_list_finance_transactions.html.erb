@@ -22,7 +22,10 @@
         <td><%= finance_transaction.groups.first.title %></td>
         <td>R$ <%= finance_transaction.real_amount %></td>
         <td>
-          <%= button_to '<i class="fa-solid fa-pencil"></i>'.html_safe, finance_transaction_path(finance_transaction.id), class: "btn btn-outline-primary", form_class: "d-inline-block", method: :put  %>
+          <%= button_tag '<i class="fa-solid fa-pencil"></i>'.html_safe,
+            class: 'btn btn-outline-primary',
+            data: data_finance_transaction_params(finance_transaction)
+          %>
           <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, finance_transaction_path(finance_transaction.id), class: "btn btn-outline-danger", form_class: "d-inline-block", method: :delete  %>
         </td>
       </tr>
