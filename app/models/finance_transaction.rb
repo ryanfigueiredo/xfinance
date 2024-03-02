@@ -6,7 +6,6 @@ class FinanceTransaction < ApplicationRecord
   has_many :groups, :through => :groups_finance_transactions
 
   validates :title, presence: true
-  # validates :purchase_date, presence: true
   validates :real_amount, presence: true
 
   before_validation :validate_installments
@@ -14,7 +13,6 @@ class FinanceTransaction < ApplicationRecord
 
   accepts_nested_attributes_for :payers_finance_transactions
   accepts_nested_attributes_for :groups_finance_transactions
-  # before_save :validate_fake_amount
 
   enum :kind, { revenue: 0, expense: 1 }, default: :expense
 
