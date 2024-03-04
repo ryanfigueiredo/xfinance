@@ -7,6 +7,7 @@ class FinanceTransaction < ApplicationRecord
 
   validates :title, presence: true
   validates :real_amount, presence: true
+  before_validation :set_month
 
   before_validation :validate_installments
   before_validation :set_purchase_date
@@ -39,5 +40,13 @@ class FinanceTransaction < ApplicationRecord
 
   def set_purchase_date
     self.purchase_date = Date.today if self.purchase_date.nil?
+  end
+
+  def set_month
+    if self.month.nil?
+      self.month = self.purchase_date.strftime("%B").downcase
+    else
+      self.month = month.downcase
+    end
   end
 end

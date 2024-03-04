@@ -6,6 +6,9 @@ class CreateFinanceTransactions < ActiveRecord::Migration[7.1]
       t.date :purchase_date
       t.string :installments, default: 'cash'
       t.decimal :real_amount
+      t.date :payment_date
+      t.string :year
+      t.string :month
 
       t.timestamps
     end
