@@ -1,0 +1,26 @@
+<% if @view.present? && @view == 'group' %>
+  <% @groups_finance_transactions.map do |group, finance_transactions| %>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= group[1] %>" aria-expanded="false" aria-controls="collapse<%= group[1] %>">
+            <div class="container">
+              <div class="row">
+                  <div class="col-auto me-auto"><%= group[0] %></div>
+                  <div class="col-auto">R$ <%= sum_total_transactions(finance_transactions) %></div>
+                </div>
+              </div>
+            </div>
+          </button>
+        </h2>
+        <div id="collapse<%= group[1] %>" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <%= render "layouts/list_finance_transactions", finance_transactions: finance_transactions %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <%= render "layouts/list_finance_transactions", finance_transactions: @groups_finance_transactions %>
+<% end %>

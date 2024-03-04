@@ -1,26 +1,24 @@
-<% if @view.present? && @view == 'group' %>
-  <% @groups_finance_transactions.map do |group, finance_transactions| %>
-    <div class="accordion" id="accordionExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= group[1] %>" aria-expanded="false" aria-controls="collapse<%= group[1] %>">
-            <div class="container">
-              <div class="row">
-                  <div class="col-auto me-auto"><%= group[0] %></div>
-                  <div class="col-auto">R$ <%= sum_total_transactions(finance_transactions) %></div>
-                </div>
-              </div>
-            </div>
-          </button>
-        </h2>
-        <div id="collapse<%= group[1] %>" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <%= render "layouts/list_finance_transactions", finance_transactions: finance_transactions %>
-          </div>
+<%= render "widgets/header_top_and_collapse" %>
+
+<div class="container-fluid">
+  <div class="row">
+    <%= render "widgets/sidebar_one" %>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <%= render "widgets/header_nav" %>
+
+      <!-- main cards  -->
+      <%= render "widgets/list_cards_header", groups_finance_transactions: @groups_finance_transactions %>
+
+      <div class="container">
+        <div class="row">
+          <!-- table -->
+          <%= render "widgets/table_type_one", groups_finance_transactions: @groups_finance_transactions %>
+
+          <!-- timeline -->
+          <%= render "widgets/timeline", groups_finance_transactions: @groups_finance_transactions %>
         </div>
       </div>
-    </div>
-  <% end %>
-<% else %>
-  <%= render "layouts/list_finance_transactions", finance_transactions: @groups_finance_transactions %>
-<% end %>
+    </main>
+  </div>
+</div>

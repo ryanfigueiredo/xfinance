@@ -1,0 +1,47 @@
+<div class="col-md-12 ml-auto mr-auto">
+  <div class="row">
+    <div class="col">
+      <h4>Last Transactions</h4>
+    </div>
+
+    <div class="col col-lg-2">
+      <input type="text" data-controller="dashboard"
+      class="form-control field-filter me-2" id="filter-title"
+      placeholder="Filter by title"
+      data-action="keyup->dashboard#filterTableFinanceTransactions">
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table" id="table-finance-transactions">
+      <thead>
+        <tr>
+          <% ['Title', 'Date', 'Installments', 'Amount', 'Actions'].each do |item| %>
+            <th><%= item %></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% groups_finance_transactions.each do |finance_transaction| %>
+          <tr>
+            <td>
+              <%= finance_transaction.title %><br/>
+              <small class='text-body-tertiary'><%= finance_transaction.groups.first.title %></small>
+            </td>
+            <td><%= finance_transaction.purchase_date %></td>
+            <td><%= finance_transaction.installments %></td>
+            <td class="text-right">R$ <%= finance_transaction.real_amount %></td>
+            <td class="td-actions text-right">
+              <button type="button" class="btn-icon btn-info btn-link btn-just-icon btn-sm">
+                <i class="fa-solid fa-edit fa-icon-sm"></i>
+              </button>
+              <button type="button" class="btn-icon btn-danger btn-link btn-just-icon btn-sm">
+                <i class="fa-solid fa-trash fa-icon-sm"></i>
+              </button>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

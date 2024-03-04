@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Dashboard</h1>
+
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <select onChange="window.location.href=this.value" class="btn btn-outline-secondary btn-sm">
+      <% months_of_year.each do |month| %>
+        <option value="<%= "dashboard?month=#{month}" %>" <%= month.downcase == current_month.downcase && 'selected' %>>
+          <%= month %>
+        </option>
+      <% end %>
+    </select>
+  </div>
+</div>

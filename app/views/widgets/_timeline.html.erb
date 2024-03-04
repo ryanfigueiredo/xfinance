@@ -1,0 +1,13 @@
+<div class="col-md-5">
+  <h4>History</h4>
+  <ul class="timeline">
+    <% groups_finance_transactions.sort_by(&:purchase_date).reverse.each do |finance_transaction| %>
+      <li class="border-<%= finance_transaction.revenue? ? 'green' : 'red' %>">
+        <span><%= finance_transaction.title %></span>
+        <span class="float-end"><%= finance_transaction.purchase_date %></span><br/>
+        <span class="float-end badge text-bg-primary"><%= finance_transaction.groups.first.title %></span>
+        <p>R$ <%= finance_transaction.real_amount %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
