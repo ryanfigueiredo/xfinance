@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row justify-content-around">
     <% {
-        'Revenues' => ['green', "R$ #{groups_finance_transactions.filter{|f| f.revenue? }.sum(&:real_amount)}"],
-        'Expenses' => ['yellow', "R$ #{groups_finance_transactions.filter{|f| f.expense? }.sum(&:real_amount)}"],
-        'Profit' => ['blue', "R$ #{sum_total_transactions(groups_finance_transactions)}"],
-        'Average' => ['blue', "R$ #{(sum_total_transactions(groups_finance_transactions) / groups_finance_transactions.count).round(2)}"],
-        'Total Transactions' => ['blue', groups_finance_transactions.count]
+        'Revenues' => ['green', "R$ #{tags_finance_transactions.filter{|f| f.revenue? }.sum(&:real_amount)}"],
+        'Expenses' => ['yellow', "R$ #{tags_finance_transactions.filter{|f| f.expense? }.sum(&:real_amount)}"],
+        'Profit' => ['blue', "R$ #{sum_total_transactions(tags_finance_transactions)}"],
+        'Average' => ['blue', "R$ #{(sum_total_transactions(tags_finance_transactions) / tags_finance_transactions.count).round(2)}"],
+        'Total Transactions' => ['blue', tags_finance_transactions.count]
         }.each do |key, value|
     %>
       <div class="col">

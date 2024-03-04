@@ -8,15 +8,15 @@
       <%= render "widgets/header_nav" %>
 
       <!-- main cards  -->
-      <%= render "widgets/list_cards_header", groups_finance_transactions: @groups_finance_transactions %>
+      <%= render "widgets/list_cards_header", tags_finance_transactions: @tags_finance_transactions %>
 
       <div class="container">
         <div class="row">
           <!-- table -->
-          <%= render "widgets/table_type_one", groups_finance_transactions: @groups_finance_transactions %>
+          <%= render "widgets/table_type_one", tags_finance_transactions: @tags_finance_transactions %>
 
           <!-- timeline -->
-          <%= render "widgets/timeline", groups_finance_transactions: @groups_finance_transactions %>
+          <%= render "widgets/timeline", tags_finance_transactions: @tags_finance_transactions %>
         </div>
       </div>
     </main>

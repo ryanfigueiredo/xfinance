@@ -7,8 +7,8 @@
   </div>
 
   <div class="col-2">
-    <%= form.fields_for :groups_finance_transactions do |gft_builder| %>
-      <%= gft_builder.select :group_id, @groups, {}, { class: "form-select field-finance-transaction" } %>
+    <%= form.fields_for :tags_finance_transactions do |gft_builder| %>
+      <%= gft_builder.select :tag_id, @tags, {}, { class: "form-select field-finance-transaction" } %>
       <%= gft_builder.hidden_field :id, value: nil %>
     <% end %>
   </div>

@@ -46,7 +46,7 @@ class FinanceTransactionsController < ApplicationController
       :purchase_date,
       :real_amount,
       :installments,
-      groups_finance_transactions_attributes: [:id, :group_id],
+      tags_finance_transactions_attributes: [:id, :tag_id],
       payers_finance_transactions_attributes: [:id, :payer_id]
     )
   end

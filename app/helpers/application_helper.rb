@@ -43,8 +43,8 @@ module ApplicationHelper
       "dashboard-hidden-param" => "false",
       "dashboard-payers-finance-transaction-id-param" => finance_transaction.payers_finance_transactions.first.id,
       "dashboard-payer-id-param" => finance_transaction.payers.first.id,
-      "dashboard-groups-finance-transaction-id-param" => finance_transaction.groups_finance_transactions.first.id,
-      "dashboard-group-id-param" => finance_transaction.groups.first.id
+      "dashboard-tags-finance-transaction-id-param" => finance_transaction.tags_finance_transactions.first.id,
+      "dashboard-tag-id-param" => finance_transaction.tags.first.id
     }
 
     finance_transaction.attributes.except("created_at", "updated_at").each do |f_transaction_attribute_key, f_transaction_attribute_value|

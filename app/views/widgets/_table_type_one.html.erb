@@ -22,11 +22,11 @@
         </tr>
       </thead>
       <tbody>
-        <% groups_finance_transactions.each do |finance_transaction| %>
+        <% tags_finance_transactions.each do |finance_transaction| %>
           <tr>
             <td>
               <%= finance_transaction.title %><br/>
-              <small class='text-body-tertiary'><%= finance_transaction.groups.first.title %></small>
+              <small class='text-body-tertiary'><%= finance_transaction.tags.first.title %></small>
             </td>
             <td><%= finance_transaction.purchase_date %></td>
             <td><%= finance_transaction.installments %></td>

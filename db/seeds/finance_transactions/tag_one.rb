@@ -1,6 +1,6 @@
 finance_transactions = [
   'january' => [
-    groups: [
+    tags: [
       'Cartao de Credito Nubank Ryan' => [
         {
           "title": "Herman Miller",
@@ -36,7 +36,7 @@ finance_transactions = [
     ]
   ],
   'february' => [
-    groups: [
+    tags: [
       'Cartao de Credito Nubank Ryan' => [
         {
           "title": "Herman Miller",

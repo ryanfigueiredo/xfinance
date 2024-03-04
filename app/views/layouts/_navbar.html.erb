@@ -6,7 +6,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 field-filter">
-        <% ['Dashboard', 'Groups', 'Payers'].map do |item| %>
+        <% ['Dashboard', 'Tags', 'Payers'].map do |item| %>
           <li class="nav-item">
             <%= link_to(item, "/#{item.downcase}", { class: 'nav-link active' }) %>
           </li>

@@ -16,57 +16,57 @@ initial_payers = [
   }
 ]
 
-initial_groups = [
+initial_tags = [
   {
-    "title": "Cartao de Credito Nubank Ryan", # group_one
+    "title": "Cartao de Credito Nubank Ryan", # tag_one
     "payment_day": "10",
     "close_day": "26",
     "kind": "expense",
   },
   {
-    "title": "Cartao de Credito Pic Pay", # group_two
+    "title": "Cartao de Credito Pic Pay", # tag_two
     "payment_day": "10",
     "close_day": "25",
     "kind": "expense",
   },
   {
-    "title": "Cartao de Credito Nubank Mamae", # group_three
+    "title": "Cartao de Credito Nubank Mamae", # tag_three
     "payment_day": "10",
     "close_day": "27",
     "kind": "expense",
   },
   {
-    "title": "Mensalidade Luana", # group_four
+    "title": "Mensalidade Luana", # tag_four
     "payment_day": "10",
     "close_day": "15",
     "kind": "revenue",
   },
   {
-    "title": "Investimentos", # group_five
-    "payment_day": "10",
-    "close_day": "15",
-    "kind": "expense",
-  },
-  {
-    "title": "Despesas", # group_six
+    "title": "Investimentos", # tag_five
     "payment_day": "10",
     "close_day": "15",
     "kind": "expense",
   },
   {
-    "title": "Receitas", # group_seven
+    "title": "Despesas", # tag_six
+    "payment_day": "10",
+    "close_day": "15",
+    "kind": "expense",
+  },
+  {
+    "title": "Receitas", # tag_seven
     "payment_day": "30",
     "close_day": "15",
     "kind": "revenue",
   },
   {
-    "title": "Pagamentos Recebidos", # group_eight
+    "title": "Pagamentos Recebidos", # tag_eight
     "payment_day": "30",
     "close_day": "15",
     "kind": "revenue",
   },
   {
-    "title": "Pagamentos Efetuados", # group_nine
+    "title": "Pagamentos Efetuados", # tag_nine
     "payment_day": "30",
     "close_day": "15",
     "kind": "revenue",
@@ -79,42 +79,42 @@ finance_transactions_nubank_mamae = [ # dates OK
   {
     "title": "Madeira Cama",
     "purchase_date": "27-09-2023",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": "05/10",
     "real_amount": 210.53
   },
   {
     "title": "Notebook Dell",
     "purchase_date": "21-07-2023",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": "08/12",
     "real_amount": 708.44
   },
   {
     "title": "Normatel",
     "purchase_date": "29-12-2023",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": '',
     "real_amount": 86
   },
   {
     "title": "Normatel",
     "purchase_date": "30-12-2023",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": '',
     "real_amount": 46.51
   },
   {
     "title": "Duto cabelos",
     "purchase_date": "30-12-2023",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": '',
     "real_amount": 35
   },
   {
     "title": "first class",
     "purchase_date": "05-01-2024",
-    "group": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
+    "tag": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
     "installments": '',
     "payers": "Luana,Ryan",
     "real_amount": 149.97
@@ -122,7 +122,7 @@ finance_transactions_nubank_mamae = [ # dates OK
   {
     "title": "first class",
     "purchase_date": "05-01-2024",
-    "group": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
+    "tag": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
     "installments": '',
     "payers": "Luana,Ryan",
     "real_amount": 259.97
@@ -130,14 +130,14 @@ finance_transactions_nubank_mamae = [ # dates OK
   {
     "title": "Gs Riomar Carrinhos",
     "purchase_date": "05-01-2024",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": '',
     "real_amount": 65
   },
   {
     "title": "Ri happy",
     "purchase_date": "05-01-2024",
-    "group": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
+    "tag": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
     "installments": '',
     "payers": "Luana,Ryan",
     "real_amount": 199.99
@@ -145,7 +145,7 @@ finance_transactions_nubank_mamae = [ # dates OK
   {
     "title": "Sam michel",
     "purchase_date": "06-01-2024",
-    "group": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
+    "tag": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
     "installments": '',
     "payers": "Luana,Ryan",
     "real_amount": 249.98
@@ -153,7 +153,7 @@ finance_transactions_nubank_mamae = [ # dates OK
   {
     "title": "Leitura Riomar",
     "purchase_date": "07-01-2024",
-    "group": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
+    "tag": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
     "installments": '',
     "payers": "Luana,Ryan",
     "real_amount": 65
@@ -161,14 +161,14 @@ finance_transactions_nubank_mamae = [ # dates OK
   {
     "title": "Blitz Intervencoes",
     "purchase_date": "07-01-2024",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": '',
     "real_amount": 43
   },
   {
     "title": "Sodine store",
     "purchase_date": "07-01-2024",
-    "group": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
+    "tag": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
     "installments": '',
     "payers": "Luana,Ryan",
     "real_amount": 120.64
@@ -176,7 +176,7 @@ finance_transactions_nubank_mamae = [ # dates OK
   {
     "title": "ArteForm Comercio",
     "purchase_date": "07-01-2024",
-    "group": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
+    "tag": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
     "installments": '',
     "payers": "Luana,Ryan",
     "real_amount": 129.9
@@ -184,7 +184,7 @@ finance_transactions_nubank_mamae = [ # dates OK
   {
     "title": "Filial Fortaleza",
     "purchase_date": "07-01-2024",
-    "group": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
+    "tag": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
     "installments": '',
     "payers": "Luana,Ryan",
     "real_amount": 39.9
@@ -192,7 +192,7 @@ finance_transactions_nubank_mamae = [ # dates OK
   {
     "title": "A Libaneza",
     "purchase_date": "07-01-2024",
-    "group": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
+    "tag": ['Mensalidade Luana', 'Cartao de Credito Nubank Mamae'],
     "installments": '',
     "payers": "Luana,Ryan",
     "real_amount": 252.69
@@ -200,35 +200,35 @@ finance_transactions_nubank_mamae = [ # dates OK
   {
     "title": "Pag nildaMariaDaSilv",
     "purchase_date": "09-01-2024",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": '',
     "real_amount": 20
   },
   {
     "title": "Mini Cars",
     "purchase_date": "09-01-2024",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": '',
     "real_amount": 20
   },
   {
     "title": "Cd Max",
     "purchase_date": "11-01-2024",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": '',
     "real_amount": 154.4
   },
   {
     "title": "Estacionamento Iguate",
     "purchase_date": "14-01-2024",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": '',
     "real_amount": 10
   },
   {
     "title": "Pag SodineStore",
     "purchase_date": "11-01-2024",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": '',
     "real_amount": 458.93
   }
@@ -238,35 +238,35 @@ finance_transactions_nubank_ryan = [# dates OK
   {
    "title": "Herman Miller",
    "purchase_date": "27-12-2023",
-   "group": 'Cartao de Credito Nubank Ryan',
+   "tag": 'Cartao de Credito Nubank Ryan',
    "installments": "2/12",
    "real_amount": 954.68
   },
   {
    "title": "Amazon",
    "purchase_date": "29-12-2023",
-   "group": 'Cartao de Credito Nubank Ryan',
+   "tag": 'Cartao de Credito Nubank Ryan',
    "installments": '',
    "real_amount": 47.29
   },
   {
    "title": "SmartFit",
    "purchase_date": "11-02-2024",
-   "group": 'Cartao de Credito Nubank Ryan',
+   "tag": 'Cartao de Credito Nubank Ryan',
    "installments": '',
    "real_amount": 109.9
   },
   {
    "title": "Vivo Controle",
    "purchase_date": "15-01-2024",
-   "group": 'Cartao de Credito Nubank Ryan',
+   "tag": 'Cartao de Credito Nubank Ryan',
    "installments": '',
    "real_amount": 54.99
   },
   {
    "title": "Pag Outgo",
    "purchase_date": "17-01-2024",
-   "group": 'Cartao de Credito Nubank Ryan',
+   "tag": 'Cartao de Credito Nubank Ryan',
    "installments": '',
    "real_amount": 35
   }
@@ -276,7 +276,7 @@ finance_transactions_pic_pay = [# dates OK
   {
    "title": "Amazon Subwoofer",
    "purchase_date": "28-06-2023",
-   "group": 'Cartao de Credito Pic Pay',
+   "tag": 'Cartao de Credito Pic Pay',
    "installments": "6/10",
    "real_amount": 265.10
   },
@@ -287,14 +287,14 @@ finance_transactions_despesas = [ #check after...
    "title": "IPVA",
    "payment_date": "02-01-2024",
    "installments": '',
-   "group": 'Despesas',
+   "tag": 'Despesas',
    "real_amount": 1982.09
   },
   {
    "title": "Colegio Maria Julia",
    "payment_date": "02-01-2024",
    "installments": '',
-   "group": ['Mensalidade Luana', 'Despesas'],
+   "tag": ['Mensalidade Luana', 'Despesas'],
    "payers": "Luana,Ryan",
    "real_amount": 650
   },
@@ -302,7 +302,7 @@ finance_transactions_despesas = [ #check after...
    "title": "Material Escolar Maria Julia",
    "payment_date": "03-01-2024",
    "installments": '',
-   "group": ['Mensalidade Luana', 'Despesas'],
+   "tag": ['Mensalidade Luana', 'Despesas'],
    "payers": "Luana,Ryan",
    "real_amount": 590
   },
@@ -310,56 +310,56 @@ finance_transactions_despesas = [ #check after...
    "title": "Wilson Dantas",
    "payment_date": "05-01-2024",
    "installments": '',
-   "group": 'Despesas',
+   "tag": 'Despesas',
    "real_amount": 5
   },
   {
    "title": "Wilson Dantas",
    "payment_date": "05-01-2024",
    "installments": '',
-   "group": 'Despesas',
+   "tag": 'Despesas',
    "real_amount": 5
   },
   {
    "title": "Raxa BNB",
    "payment_date": "09-01-2024",
    "installments": '',
-   "group": 'Despesas',
+   "tag": 'Despesas',
    "real_amount": 20
   },
   {
    "title": "Grafica Point S Com",
    "payment_date": "11-01-2024",
    "installments": '',
-   "group": 'Despesas',
+   "tag": 'Despesas',
    "real_amount": 26
   },
   {
    "title": "Raxa BNB Mensalidade",
    "payment_date": "15-01-2024",
    "installments": '',
-   "group": 'Despesas',
+   "tag": 'Despesas',
    "real_amount": 60
   },
   # {
   #  "title": "XP investimentos",
   #  "payment_date": "02-01-2024",
   #  "installments": '',
-  #  "group": 'Despesas',
+  #  "tag": 'Despesas',
   #  "real_amount": 1000
   # },
   # {
   #  "title": "Pagamento PicPay",
   #  "payment_date": "03-01-2024",
   #  "installments": '',
-  #  "group": 'Despesas',
+  #  "tag": 'Despesas',
   #  "real_amount": 265.10
   # },
   # {
   #  "title": "Pagamento Cartao Nubank Mamae",
   #  "payment_date": "30-01-2024",
   #  "installments": '',
-  #  "group": 'Despesas',
+  #  "tag": 'Despesas',
   #  "real_amount": 3325.85
   # },
 ]
@@ -370,7 +370,7 @@ acount_transactions_mensalidade_luana = [#check after
     "title": "Plano de saude",
     "payment_date": "16-02-2024",
     "installments": '',
-    "group": 'Mensalidade Luana',
+    "tag": 'Mensalidade Luana',
     "payers": "Luana",
     "real_amount": 200
   },
@@ -379,7 +379,7 @@ acount_transactions_mensalidade_luana = [#check after
     "title": "Alimentacao",
     "payment_date": "16-02-2024",
     "installments": '',
-    "group": 'Mensalidade Luana',
+    "tag": 'Mensalidade Luana',
     "payers": "Luana",
     "real_amount": 150
   },
@@ -388,7 +388,7 @@ acount_transactions_mensalidade_luana = [#check after
     "title": "Necesser",
     "payment_date": "16-02-2024",
     "installments": '',
-    "group": 'Mensalidade Luana',
+    "tag": 'Mensalidade Luana',
     "payers": "Luana",
     "real_amount": 25
   },
@@ -397,7 +397,7 @@ acount_transactions_mensalidade_luana = [#check after
     "title": "A parte",
     "payment_date": "16-02-2024",
     "installments": '',
-    "group": 'Mensalidade Luana',
+    "tag": 'Mensalidade Luana',
     "payers": "Luana",
     "real_amount": 192
   },
@@ -408,14 +408,14 @@ finance_transactions_investimentos = [
     "title": "Fundos imobiliarios",
     "payment_date": "02-01-2024",
     "installments": '',
-    "group": 'Investimentos',
+    "tag": 'Investimentos',
     "real_amount": 500
   },
   {
     "title": "Acoes",
     "payment_date": "02-01-2024",
     "installments": '',
-    "group": 'Investimentos',
+    "tag": 'Investimentos',
     "real_amount": 500
   }
 ]
@@ -426,7 +426,7 @@ finance_transactions_receitas = [
     "title": "Salario",
     "payment_date": "30-01-2024",
     "installments": '',
-    "group": 'Receitas',
+    "tag": 'Receitas',
     "payers": "IA",
     "real_amount": 4313.17
   },
@@ -435,7 +435,7 @@ finance_transactions_receitas = [
     "title": "Ressalva ppay",
     "payment_date": "02-02-2024",
     "installments": '',
-    "group": 'Receitas',
+    "tag": 'Receitas',
     "payers": "Mae",
     "real_amount": 1500
   }
@@ -449,35 +449,35 @@ finance_transactions_nubank_mamae_feb = [ # dates OK
   {
     "title": "Madeira Cama",
     "purchase_date": "27-09-2023",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": "05/10",
     "real_amount": 210.53
   },
   {
     "title": "Notebook Dell",
     "purchase_date": "21-07-2023",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": "08/12",
     "real_amount": 708.44
   },
   {
     "title": "MP GuicheWeb Circo Americano",
     "purchase_date": "27-01-2024",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": "08/12",
     "real_amount": 160.50
   },
   {
     "title": "Amazon Prime Canais",
     "purchase_date": "12-02-2024",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": '',
     "real_amount": 29.90
   },
   {
     "title": "Silcar Veiculos Evaporadora",
     "purchase_date": "16-02-2024",
-    "group": 'Cartao de Credito Nubank Mamae',
+    "tag": 'Cartao de Credito Nubank Mamae',
     "installments": "1/3",
     "real_amount": 280.64
   },
@@ -487,21 +487,21 @@ finance_transactions_nubank_ryan_feb = [# dates OK
   {
    "title": "Herman Miller",
    "purchase_date": "27-12-2023",
-   "group": 'Cartao de Credito Nubank Ryan',
+   "tag": 'Cartao de Credito Nubank Ryan',
    "installments": "3/12",
    "real_amount": 954.68
   },
   {
    "title": "Mercado Livre Cabo Thunderbolt",
    "purchase_date": "01-02-2024",
-   "group": 'Cartao de Credito Nubank Ryan',
+   "tag": 'Cartao de Credito Nubank Ryan',
    "installments": '',
    "real_amount": 179.99
   },
   {
    "title": "Fix Pay Bateria",
    "purchase_date": "01-02-2024",
-   "group": 'Cartao de Credito Nubank Ryan',
+   "tag": 'Cartao de Credito Nubank Ryan',
    "installments": '',
    "real_amount": 440.00
   },
@@ -509,14 +509,14 @@ finance_transactions_nubank_ryan_feb = [# dates OK
   {
    "title": "Amazon",
    "purchase_date": "05-02-2024",
-   "group": 'Cartao de Credito Nubank Ryan',
+   "tag": 'Cartao de Credito Nubank Ryan',
    "installments": '',
    "real_amount": 42.90
   },
   {
    "title": "Uhuu Dzo Ingresso Renato Albani",
    "purchase_date": "08-02-2024",
-   "group": ['Mensalidade Luana', 'Cartao de Credito Nubank Ryan'],
+   "tag": ['Mensalidade Luana', 'Cartao de Credito Nubank Ryan'],
    "payers": "Luana,Ryan",
    "installments": '',
    "real_amount": 144.00
@@ -524,14 +524,14 @@ finance_transactions_nubank_ryan_feb = [# dates OK
   {
    "title": "Pag Francisca Mao de Obra Val. Expansao",
    "purchase_date": "08-02-2024",
-   "group": 'Cartao de Credito Nubank Ryan',
+   "tag": 'Cartao de Credito Nubank Ryan',
    "installments": '',
    "real_amount": 390.00
   },
   {
    "title": "T.R Maia Performance Sup - Mensalidade Jiu-Jistu MJ",
    "purchase_date": "09-02-2024",
-   "group": ['Mensalidade Luana', 'Cartao de Credito Nubank Ryan'],
+   "tag": ['Mensalidade Luana', 'Cartao de Credito Nubank Ryan'],
    "payers": "Luana,Ryan",
    "installments": '',
    "real_amount": 150
@@ -539,7 +539,7 @@ finance_transactions_nubank_ryan_feb = [# dates OK
   {
    "title": "T.R Maia Performance Sup - Matricula Jiu-Jistu MJ",
    "purchase_date": "09-02-2024",
-   "group": ['Mensalidade Luana', 'Cartao de Credito Nubank Ryan'],
+   "tag": ['Mensalidade Luana', 'Cartao de Credito Nubank Ryan'],
    "payers": "Luana,Ryan",
    "installments": '',
    "real_amount": 40
@@ -547,14 +547,14 @@ finance_transactions_nubank_ryan_feb = [# dates OK
   {
    "title": "Smart Fit",
    "purchase_date": "14-02-2024",
-   "group": 'Cartao de Credito Nubank Ryan',
+   "tag": 'Cartao de Credito Nubank Ryan',
    "installments": '',
    "real_amount": 109.90
   },
   {
    "title": "Vivo Controle",
    "purchase_date": "15-02-2024",
-   "group": 'Cartao de Credito Nubank Ryan',
+   "tag": 'Cartao de Credito Nubank Ryan',
    "installments": '',
    "real_amount": 54.99
   }
@@ -564,7 +564,7 @@ finance_transactions_pic_pay_feb = [# dates OK
   {
    "title": "Amazon Subwoofer",
    "purchase_date": "28-06-2023",
-   "group": 'Cartao de Credito Pic Pay',
+   "tag": 'Cartao de Credito Pic Pay',
    "installments": "7/10",
    "real_amount": 265.10
   },
@@ -575,7 +575,7 @@ finance_transactions_despesas_feb = [ #check after...
    "title": "Colegio Maria Julia",
    "payment_date": "02-01-2024",
    "installments": '',
-   "group": ['Mensalidade Luana', 'Despesas'],
+   "tag": ['Mensalidade Luana', 'Despesas'],
    "payers": "Luana,Ryan",
    "real_amount": 700
   }
@@ -586,7 +586,7 @@ acount_transactions_mensalidade_luana_feb = [#check after
     "kind": "revenue",
     "title": "Plano de saude",
     "installments": '',
-    "group": 'Mensalidade Luana',
+    "tag": 'Mensalidade Luana',
     "payers": "Luana",
     "real_amount": 200
   },
@@ -594,7 +594,7 @@ acount_transactions_mensalidade_luana_feb = [#check after
     "kind": "revenue",
     "title": "Alimentacao",
     "installments": '',
-    "group": 'Mensalidade Luana',
+    "tag": 'Mensalidade Luana',
     "payers": "Luana",
     "real_amount": 150
   },
@@ -605,13 +605,13 @@ finance_transactions_investimentos_feb = [
   {
     "title": "Fundos imobiliarios",
     "installments": '',
-    "group": 'Investimentos',
+    "tag": 'Investimentos',
     "real_amount": 500
   },
   {
     "title": "Acoes",
     "installments": '',
-    "group": 'Investimentos',
+    "tag": 'Investimentos',
     "real_amount": 500
   }
 ]
@@ -622,7 +622,7 @@ finance_transactions_receitas_feb = [
     "title": "Salario",
     "payment_date": "29-02-2024",
     "installments": '',
-    "group": 'Receitas',
+    "tag": 'Receitas',
     "payers": "IA",
     "real_amount": 6030.12
   },
@@ -631,7 +631,7 @@ finance_transactions_receitas_feb = [
     "title": "Dinheiro Aniversario",
     "payment_date": "02-02-2024",
     "installments": '',
-    "group": 'Receitas',
+    "tag": 'Receitas',
     "payers": "Pai",
     "real_amount": 200
   },
@@ -640,7 +640,7 @@ finance_transactions_receitas_feb = [
     "title": "Dinheiro saco de lixo tio JR",
     "payment_date": "17-02-2024",
     "installments": '',
-    "group": 'Receitas',
+    "tag": 'Receitas',
     "payers": "Pai",
     "real_amount": 30
   }
@@ -652,8 +652,8 @@ finance_transaction_payments_received_feb = [
     "title": "Ressalva ppay",
     "payment_date": "03-03-2024",
     "installments": '',
-    "group": 'Receitas',
-    "group_month": 'february',
+    "tag": 'Receitas',
+    "tag_month": 'february',
     "payers": "Mae",
     "real_amount": 2000
   },
@@ -662,8 +662,8 @@ finance_transaction_payments_received_feb = [
     "title": "Pagamento Mensalidade Luana",
     "payment_date": "03-03-2024",
     "installments": '',
-    "group": 'Pagamentos Recebidos',
-    "group_month": 'february',
+    "tag": 'Pagamentos Recebidos',
+    "tag_month": 'february',
     "payers": "Luana",
     "real_amount": 890
   },
@@ -675,8 +675,8 @@ finance_transaction_payments_made_feb = [
     "title": "Pagamento Cartao de credito Nubank Mamae",
     "payment_date": "02-29-2024",
     "installments": '',
-    "group": 'Pagamentos Efetuados',
-    "group_month": 'february',
+    "tag": 'Pagamentos Efetuados',
+    "tag_month": 'february',
     "payers": "Ryan",
     "real_amount": 1390.01
   },
@@ -685,8 +685,8 @@ finance_transaction_payments_made_feb = [
     "title": "Pagamento Cartao de credito Nubank Ryan",
     "payment_date": "02-29-2024",
     "installments": '',
-    "group": 'Pagamentos Efetuados',
-    "group_month": 'february',
+    "tag": 'Pagamentos Efetuados',
+    "tag_month": 'february',
     "payers": "Ryan",
     "real_amount": 2506.46
   }
@@ -701,7 +701,7 @@ finance_transactions_despesas_mar = [
    "title": "Wilson Dantas Pedrosa",
    "payment_date": "03-02-2024",
    "installments": '',
-   "group": 'Despesas',
+   "tag": 'Despesas',
    "payers": "Ryan",
    "real_amount": 6
   }
@@ -713,8 +713,8 @@ finance_transaction_payments_made_mar = [
     "title": "Pagamento Escola Maria Julia",
     "payment_date": "03-01-2024",
     "installments": '',
-    "group": 'Pagamentos Efetuados',
-    "group_month": 'march',
+    "tag": 'Pagamentos Efetuados',
+    "tag_month": 'march',
     "payers": "Ryan",
     "real_amount": 700
   }
@@ -730,27 +730,27 @@ def create_payers(payers)
   end
 end
 
-def create_groups(groups)
-  groups.each do |group|
-    # payer = Payer.find_by(name: group[:payer])
+def create_tags(tags)
+  tags.each do |tag|
+    # payer = Payer.find_by(name: tag[:payer])
 
-    group_created = Group.create!(
-      title: group[:title],
-      payment_day: group[:payment_day],
-      close_day: group[:close_day],
-      kind: group[:kind],
+    tag_created = Tag.create!(
+      title: tag[:title],
+      payment_day: tag[:payment_day],
+      close_day: tag[:close_day],
+      kind: tag[:kind],
       # payer: payer
     )
 
-    puts "Create group: #{group_created.attributes}"
+    puts "Create tag: #{tag_created.attributes}"
   end
 end
 
 def create_finance_transactions_and_payers(finance_transactions, month)
   finance_transactions.each do |finance_transaction|
-    if finance_transaction[:group].is_a?(Array)
-      finance_transaction[:group].each_with_index do |group_name, index|
-        group = Group.find_by(title: group_name)
+    if finance_transaction[:tag].is_a?(Array)
+      finance_transaction[:tag].each_with_index do |tag_name, index|
+        tag = Tag.find_by(title: tag_name)
         payers_name = finance_transaction[:payers].split(',')
         payer = Payer.find_by(name: payers_name[index])
 
@@ -769,31 +769,38 @@ def create_finance_transactions_and_payers(finance_transactions, month)
           attributes.merge!(kind: :revenue)
         end
 
+        if finance_transaction[:tag_month].present?
+          attributes.merge!(month: finance_transaction[:tag_month])
+        end
+
+        if month.present?
+          attributes.merge!(month: month)
+        end
+
         finance_transaction_created = FinanceTransaction.create!(attributes)
 
         puts "Create finance transaction: #{finance_transaction_created.attributes}"
 
         payer_finance_transaction_created = PayersFinanceTransaction.create!(
           finance_transaction: finance_transaction_created,
-          payer: payer,
+          payer: payer
         )
 
         puts "Create payer finance transaction: #{payer_finance_transaction_created.attributes}"
 
-        if finance_transaction[:group_month].present?
-          month = finance_transaction[:group_month]
+        if finance_transaction[:tag_month].present?
+          month = finance_transaction[:tag_month]
         end
 
-        group_finance_transaction_created = GroupsFinanceTransaction.create!(
+        tag_finance_transaction_created = TagsFinanceTransaction.create!(
           finance_transaction: finance_transaction_created,
-          group: group,
-          month: month
+          tag: tag
         )
 
-        puts "Create group finance transaction: #{group_finance_transaction_created.attributes}"
+        puts "Create tag finance transaction: #{tag_finance_transaction_created.attributes}"
       end
     else
-      group = Group.find_by(title: finance_transaction[:group])
+      tag = Tag.find_by(title: finance_transaction[:tag])
       payer = finance_transaction[:payers].present? ? Payer.find_by(name: finance_transaction[:payers]) : Payer.find_by(name: 'Ryan')
 
       attributes = {
@@ -811,24 +818,27 @@ def create_finance_transactions_and_payers(finance_transactions, month)
         attributes.merge!(kind: :revenue)
       end
 
+      if month.present?
+        attributes.merge!(month: month)
+      end
+
       finance_transaction_created = FinanceTransaction.create!(attributes)
 
       puts "Create finance transaction: #{finance_transaction_created.attributes}"
 
       payer_finance_transaction_created = PayersFinanceTransaction.create!(
         finance_transaction: finance_transaction_created,
-        payer: payer,
+        payer: payer
       )
 
       puts "Create payer finance transaction: #{payer_finance_transaction_created.attributes}"
 
-      group_finance_transaction_created = GroupsFinanceTransaction.create!(
+      tag_finance_transaction_created = TagsFinanceTransaction.create!(
           finance_transaction: finance_transaction_created,
-          group: group,
-          month: month
+          tag: tag
         )
 
-        puts "Create group finance transaction: #{group_finance_transaction_created.attributes}"
+        puts "Create tag finance transaction: #{tag_finance_transaction_created.attributes}"
     end
   end
 end
@@ -839,11 +849,11 @@ create_payers(initial_payers)
 
 puts "Payers created"
 
-puts "Creating initial groups..."
+puts "Creating initial tags..."
 
-create_groups(initial_groups)
+create_tags(initial_tags)
 
-puts "Groups created"
+puts "Tags created"
 
 puts "Creating finance transactions of January..."
 

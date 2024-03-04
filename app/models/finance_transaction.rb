@@ -2,8 +2,8 @@ class FinanceTransaction < ApplicationRecord
   has_many :payers_finance_transactions, dependent: :destroy
   has_many :payers, :through => :payers_finance_transactions
 
-  has_many :groups_finance_transactions, dependent: :destroy
-  has_many :groups, :through => :groups_finance_transactions
+  has_many :tags_finance_transactions, dependent: :destroy
+  has_many :tags, :through => :tags_finance_transactions
 
   validates :title, presence: true
   validates :real_amount, presence: true
@@ -13,20 +13,18 @@ class FinanceTransaction < ApplicationRecord
   before_validation :set_purchase_date
 
   accepts_nested_attributes_for :payers_finance_transactions
-  accepts_nested_attributes_for :groups_finance_transactions
+  accepts_nested_attributes_for :tags_finance_transactions
 
   enum :kind, { revenue: 0, expense: 1 }, default: :expense
 
   scope :per_month, ->(month) {
-    includes(:payers, :groups)
-    .joins(:groups)
-    .joins(:groups_finance_transactions)
-    .where(groups_finance_transactions: { month: month })
+    includes(:payers, :tags)
+    .where(month: month)
   }
 
-  scope :by_groups, -> {
+  scope :by_tags, -> {
     group_by do |finance_transaction|
-      [finance_transaction.groups.first.title, finance_transaction.groups.first.id]
+      [finance_transaction.tags.first.title, finance_transaction.tags.first.id]
     end
   }
 

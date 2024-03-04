@@ -6,7 +6,7 @@
       <th scope="col">Payment Date</th>
       <th scope="col">Installments</th>
       <th scope="col">Payers</th>
-      <th scope="col">Group</th>
+      <th scope="col">Tag</th>
       <th scope="col">Amount</th>
       <th scope="col">Actions</th>
     </tr>
@@ -19,7 +19,7 @@
         <td><%= finance_transaction.payment_date %></td>
         <td><%= finance_transaction.installments %></td>
         <td><%= finance_transaction.payers.map(&:name).join(", ") %></td>
-        <td><%= finance_transaction.groups.first.title %></td>
+        <td><%= finance_transaction.tags.first.title %></td>
         <td>R$ <%= finance_transaction.real_amount %></td>
         <td>
           <%= button_tag '<i class="fa-solid fa-pencil"></i>'.html_safe,

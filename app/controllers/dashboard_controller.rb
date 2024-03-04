@@ -9,19 +9,14 @@ class DashboardController < ApplicationController
 
   def build_query
     @view = params[:view]
+    @tags_finance_transactions = FinanceTransaction.per_month(@month)
 
-    if @view.present? && @view == 'group'
-      @groups_finance_transactions = FinanceTransaction.per_month(@month).by_groups
-    else
-      @groups_finance_transactions = FinanceTransaction.includes(:payers, :groups)
-                                              .joins(:groups_finance_transactions)
-                                              .where(groups_finance_transactions: { month: @month })
-    end
+    @tags_finance_transactions.by_tags if @view.present? && @view == 'tag'
   end
 
   def set_build_accepts_nested_attributes_for
     @finance_transaction = FinanceTransaction.new.tap do |ft|
-      ft.groups_finance_transactions.build
+      ft.tags_finance_transactions.build
       ft.payers_finance_transactions.build
     end
   end

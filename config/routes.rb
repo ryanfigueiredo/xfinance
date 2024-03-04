@@ -13,9 +13,9 @@ Rails.application.routes.draw do
 
   resources :finance_transactions
 
-  get '/groups', to: 'groups#index'
-  get '/groups/:id', to: 'groups#show'
-  get '/groups/:id/:month', to: 'groups#show'
+  get '/tags', to: 'tags#index'
+  get '/tags/:id', to: 'tags#show'
+  get '/tags/:id/:month', to: 'tags#show'
 
   get '/payers', to: 'payers#index'
   get '/payers/:month', to: 'payers#index'

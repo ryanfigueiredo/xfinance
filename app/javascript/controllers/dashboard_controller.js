@@ -30,7 +30,7 @@ export default class extends Controller {
     this.toggleFormFinanceTransaction(hidden)
   }
 
-  toggleFilterAddTableFinanceTransactionsEdit({ params: { id, title, realAmount, kind, purchaseDate, installments, payersFinanceTransactionId, payerId, groupsFinanceTransactionId, groupId, hidden } }) {
+  toggleFilterAddTableFinanceTransactionsEdit({ params: { id, title, realAmount, kind, purchaseDate, installments, payersFinanceTransactionId, payerId, tagsFinanceTransactionId, tagId, hidden } }) {
     this.toggleFormFinanceTransaction(hidden)
 
     let financeTransactionTitle = document.querySelector('#finance_transaction_title')
@@ -39,9 +39,9 @@ export default class extends Controller {
     let financeTransactionPurchaseDate = document.querySelector('#finance_transaction_purchase_date')
     let financeTransactionInstallments = document.querySelector('#finance_transaction_installments')
     let financeTransactionPayerId = document.querySelector('#finance_transaction_payers_finance_transactions_attributes_0_payer_id')
-    let financeTransactionGroupId = document.querySelector('#finance_transaction_groups_finance_transactions_attributes_0_group_id')
+    let financeTransactionTagId = document.querySelector('#finance_transaction_tags_finance_transactions_attributes_0_tag_id')
     let financeTransactionPayersFinanceTransactionId = document.querySelector('#finance_transaction_payers_finance_transactions_attributes_0_id')
-    let financeTransactionGroupsFinanceTransactionId = document.querySelector('#finance_transaction_groups_finance_transactions_attributes_0_id')
+    let financeTransactionTagsFinanceTransactionId = document.querySelector('#finance_transaction_tags_finance_transactions_attributes_0_id')
 
     financeTransactionTitle.value = title
     financeTransactionAmount.value = realAmount
@@ -50,8 +50,8 @@ export default class extends Controller {
     financeTransactionInstallments.value = installments.split('/')[1]
     financeTransactionPayersFinanceTransactionId.value = payersFinanceTransactionId
     financeTransactionPayerId.value = payerId
-    financeTransactionGroupsFinanceTransactionId.value = groupsFinanceTransactionId
-    financeTransactionGroupId.value = groupId
+    financeTransactionTagsFinanceTransactionId.value = tagsFinanceTransactionId
+    financeTransactionTagId.value = tagId
     this.setAttributesFormFinanceTransaction(id)
   }
 

@@ -1,11 +1,11 @@
 finance_transactions = [
   'january' => [
-    groups: [
+    tags: [
       'Cartao de Credito Pic Pay' => [
         {
           "title": "Amazon Subwoofer",
           "purchase_date": "28-06-2023",
-          "group": '',
+          "tag": '',
           "installments": "6/10",
           "real_amount": 265.10
         }
@@ -13,12 +13,12 @@ finance_transactions = [
     ]
   ],
   'february' => [
-    groups: [
+    tags: [
       'Cartao de Credito Pic Pay' => [
         {
           "title": "Amazon Subwoofer",
           "purchase_date": "28-06-2023",
-          "group": '',
+          "tag": '',
           "installments": "7/10",
           "real_amount": 265.10
         }

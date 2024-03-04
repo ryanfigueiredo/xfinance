@@ -1,39 +1,39 @@
 finance_transactions = [
   'january' => [
-    groups: [
+    tags: [
       'Investimentos' => [
         {
           "title": "Fundos imobiliarios",
           "payment_date": "02-01-2024",
           "installments": '',
-          "group": 'Investimentos',
+          "tag": 'Investimentos',
           "real_amount": 500
         },
         {
           "title": "Acoes",
           "payment_date": "02-01-2024",
           "installments": '',
-          "group": 'Investimentos',
+          "tag": 'Investimentos',
           "real_amount": 500
         }
       ]
     ]
   ],
   'february' => [
-    groups: [
+    tags: [
       'Investimentos' => [
         {
           "title": "Fundos imobiliarios",
           "payment_date": "02-01-2024",
           "installments": '',
-          "group": 'Investimentos',
+          "tag": 'Investimentos',
           "real_amount": 500
         },
         {
           "title": "Acoes",
           "payment_date": "02-01-2024",
           "installments": '',
-          "group": 'Investimentos',
+          "tag": 'Investimentos',
           "real_amount": 500
         }
       ]

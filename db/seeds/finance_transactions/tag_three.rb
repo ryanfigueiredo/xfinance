@@ -1,6 +1,6 @@
 finance_transactions = [
   'january' => [
-    groups: [
+    tags: [
       'Cartao de Credito Nubank Mamae' => [
         {
           "title": "Madeira Cama",
@@ -78,7 +78,7 @@ finance_transactions = [
     ]
   ],
   'february' => [
-    groups: [
+    tags: [
       'Cartao de Credito Nubank Mamae' => [
         {
           "title": "Madeira Cama",

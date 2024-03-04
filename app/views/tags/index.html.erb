@@ -5,11 +5,11 @@
     </tr>
   </thead>
   <tbody>
-    <% @groups.each do |group| %>
+    <% @tags.each do |tag| %>
       <tr>
         <td>
-          <a href="groups/<%= group.id %>">
-            <%= group.title %>
+          <a href="tags/<%= tag.id %>">
+            <%= tag.title %>
           </a>
         </td>
       </tr>

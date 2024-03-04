@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_21_155935) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_20_104853) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,29 +20,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_21_155935) do
     t.date "purchase_date"
     t.string "installments", default: "cash"
     t.decimal "real_amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.date "payment_date"
-  end
-
-  create_table "groups", force: :cascade do |t|
-    t.string "title", null: false
-    t.string "payment_day"
-    t.string "close_day"
-    t.integer "kind", default: 0
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "groups_finance_transactions", force: :cascade do |t|
-    t.bigint "group_id", null: false
-    t.bigint "finance_transaction_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "year"
     t.string "month"
-    t.index ["finance_transaction_id"], name: "index_groups_finance_transactions_on_finance_transaction_id"
-    t.index ["group_id"], name: "index_groups_finance_transactions_on_group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "payers", force: :cascade do |t|
@@ -60,8 +42,27 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_21_155935) do
     t.index ["payer_id"], name: "index_payers_finance_transactions_on_payer_id"
   end
 
-  add_foreign_key "groups_finance_transactions", "finance_transactions"
-  add_foreign_key "groups_finance_transactions", "groups"
+  create_table "tags", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "payment_day"
+    t.string "close_day"
+    t.integer "kind", default: 0
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags_finance_transactions", force: :cascade do |t|
+    t.bigint "tag_id", null: false
+    t.bigint "finance_transaction_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["finance_transaction_id"], name: "index_tags_finance_transactions_on_finance_transaction_id"
+    t.index ["tag_id"], name: "index_tags_finance_transactions_on_tag_id"
+  end
+
   add_foreign_key "payers_finance_transactions", "finance_transactions"
   add_foreign_key "payers_finance_transactions", "payers"
+  add_foreign_key "tags_finance_transactions", "finance_transactions"
+  add_foreign_key "tags_finance_transactions", "tags"
 end

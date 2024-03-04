@@ -1,6 +1,6 @@
 finance_transactions = [
   'january' => [
-    groups: [
+    tags: [
       'Mensalidade Luana' => [
         {
           "kind": "revenue",
@@ -38,7 +38,7 @@ finance_transactions = [
     ]
   ],
   'february' => [
-    groups: [
+    tags: [
       'Mensalidade Luana' => [
         {
           "kind": "revenue",
