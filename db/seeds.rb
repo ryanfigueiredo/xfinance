@@ -18,43 +18,55 @@ initial_payers = [
 
 initial_groups = [
   {
-    "title": "Cartao de Credito Nubank Ryan",
+    "title": "Cartao de Credito Nubank Ryan", # group_one
     "payment_day": "10",
     "close_day": "26",
     "kind": "expense",
   },
   {
-    "title": "Cartao de Credito Pic Pay",
+    "title": "Cartao de Credito Pic Pay", # group_two
     "payment_day": "10",
     "close_day": "25",
     "kind": "expense",
   },
   {
-    "title": "Cartao de Credito Nubank Mamae",
+    "title": "Cartao de Credito Nubank Mamae", # group_three
     "payment_day": "10",
     "close_day": "27",
     "kind": "expense",
   },
   {
-    "title": "Mensalidade Luana",
+    "title": "Mensalidade Luana", # group_four
     "payment_day": "10",
     "close_day": "15",
     "kind": "revenue",
   },
   {
-    "title": "Despesas",
+    "title": "Investimentos", # group_five
     "payment_day": "10",
     "close_day": "15",
     "kind": "expense",
   },
   {
-    "title": "Investimentos",
+    "title": "Despesas", # group_six
     "payment_day": "10",
     "close_day": "15",
     "kind": "expense",
   },
   {
-    "title": "Receitas",
+    "title": "Receitas", # group_seven
+    "payment_day": "30",
+    "close_day": "15",
+    "kind": "revenue",
+  },
+  {
+    "title": "Pagamentos Recebidos", # group_eight
+    "payment_day": "30",
+    "close_day": "15",
+    "kind": "revenue",
+  },
+  {
+    "title": "Pagamentos Efetuados", # group_nine
     "payment_day": "30",
     "close_day": "15",
     "kind": "revenue",
@@ -586,7 +598,7 @@ acount_transactions_mensalidade_luana_feb = [#check after
     "payers": "Luana",
     "real_amount": 150
   },
-  
+
 ]
 
 finance_transactions_investimentos_feb = [
@@ -634,8 +646,80 @@ finance_transactions_receitas_feb = [
   }
 ]
 
+finance_transaction_payments_received_feb = [
+  {
+    "kind": "revenue",
+    "title": "Ressalva ppay",
+    "payment_date": "03-03-2024",
+    "installments": '',
+    "group": 'Receitas',
+    "group_month": 'february',
+    "payers": "Mae",
+    "real_amount": 2000
+  },
+  {
+    "kind": "revenue",
+    "title": "Pagamento Mensalidade Luana",
+    "payment_date": "03-03-2024",
+    "installments": '',
+    "group": 'Pagamentos Recebidos',
+    "group_month": 'february',
+    "payers": "Luana",
+    "real_amount": 890
+  },
+]
+
+finance_transaction_payments_made_feb = [
+  {
+    "kind": "revenue",
+    "title": "Pagamento Cartao de credito Nubank Mamae",
+    "payment_date": "02-29-2024",
+    "installments": '',
+    "group": 'Pagamentos Efetuados',
+    "group_month": 'february',
+    "payers": "Ryan",
+    "real_amount": 1390.01
+  },
+  {
+    "kind": "revenue",
+    "title": "Pagamento Cartao de credito Nubank Ryan",
+    "payment_date": "02-29-2024",
+    "installments": '',
+    "group": 'Pagamentos Efetuados',
+    "group_month": 'february',
+    "payers": "Ryan",
+    "real_amount": 2506.46
+  }
+]
+
 # finance transactions February of 2024
-                                    
+
+# finance transactions March of 2024
+
+finance_transactions_despesas_mar = [
+  {
+   "title": "Wilson Dantas Pedrosa",
+   "payment_date": "03-02-2024",
+   "installments": '',
+   "group": 'Despesas',
+   "payers": "Ryan",
+   "real_amount": 6
+  }
+]
+
+finance_transaction_payments_made_mar = [
+  {
+    "kind": "revenue",
+    "title": "Pagamento Escola Maria Julia",
+    "payment_date": "03-01-2024",
+    "installments": '',
+    "group": 'Pagamentos Efetuados',
+    "group_month": 'march',
+    "payers": "Ryan",
+    "real_amount": 700
+  }
+]
+
 def create_payers(payers)
   payers.each do |payer|
     payer_created = Payer.create!(
@@ -695,6 +779,10 @@ def create_finance_transactions_and_payers(finance_transactions, month)
         )
 
         puts "Create payer finance transaction: #{payer_finance_transaction_created.attributes}"
+
+        if finance_transaction[:group_month].present?
+          month = finance_transaction[:group_month]
+        end
 
         group_finance_transaction_created = GroupsFinanceTransaction.create!(
           finance_transaction: finance_transaction_created,
@@ -778,5 +866,14 @@ create_finance_transactions_and_payers(finance_transactions_despesas_feb, 'Febru
 create_finance_transactions_and_payers(acount_transactions_mensalidade_luana_feb, 'February')
 create_finance_transactions_and_payers(finance_transactions_investimentos_feb, 'February')
 create_finance_transactions_and_payers(finance_transactions_receitas_feb, 'February')
+create_finance_transactions_and_payers(finance_transaction_payments_received_feb, 'February')
+create_finance_transactions_and_payers(finance_transaction_payments_made_feb, 'February')
 
 puts "Finance transactions created February"
+
+puts "Creating finance transactions of March..."
+
+create_finance_transactions_and_payers(finance_transactions_despesas_mar, 'March')
+create_finance_transactions_and_payers(finance_transaction_payments_made_mar, 'March')
+
+puts "Finance transactions created March"
