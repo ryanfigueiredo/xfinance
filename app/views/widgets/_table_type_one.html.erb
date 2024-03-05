@@ -26,7 +26,9 @@
           <tr>
             <td>
               <%= finance_transaction.title %><br/>
-              <small class='text-body-tertiary'><%= finance_transaction.tags.first.title %></small>
+              <% finance_transaction.tags.each_with_index do |tag, index| %>
+                <small class='text-<%= tag.color %>'><%= tag.title %><%= finance_transaction.tags.count != index + 1 ? ' |' : '' %></small>
+              <% end %>
             </td>
             <td><%= finance_transaction.purchase_date %></td>
             <td><%= finance_transaction.installments %></td>

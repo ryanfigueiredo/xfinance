@@ -22,54 +22,63 @@ initial_tags = [
     "payment_day": "10",
     "close_day": "26",
     "kind": "expense",
+    "color": 'info-emphasis'
   },
   {
     "title": "Cartao de Credito Pic Pay", # tag_two
     "payment_day": "10",
     "close_day": "25",
     "kind": "expense",
+    "color": 'secondary'
   },
   {
     "title": "Cartao de Credito Nubank Mamae", # tag_three
     "payment_day": "10",
     "close_day": "27",
     "kind": "expense",
+    "color": 'secondary-emphasis'
   },
   {
     "title": "Mensalidade Luana", # tag_four
     "payment_day": "10",
     "close_day": "15",
     "kind": "revenue",
+    "color": 'warning-emphasis'
   },
   {
     "title": "Investimentos", # tag_five
     "payment_day": "10",
     "close_day": "15",
     "kind": "expense",
+    "color": 'light-emphasis'
   },
   {
     "title": "Despesas", # tag_six
     "payment_day": "10",
     "close_day": "15",
     "kind": "expense",
+    "color": 'danger'
   },
   {
     "title": "Receitas", # tag_seven
     "payment_day": "30",
     "close_day": "15",
     "kind": "revenue",
+    "color": 'success'
   },
   {
     "title": "Pagamentos Recebidos", # tag_eight
     "payment_day": "30",
     "close_day": "15",
     "kind": "revenue",
+    "color": 'success-emphasis'
   },
   {
     "title": "Pagamentos Efetuados", # tag_nine
     "payment_day": "30",
     "close_day": "15",
     "kind": "revenue",
+    "color": 'danger-emphasis'
   }
 ]
 
@@ -739,7 +748,7 @@ def create_tags(tags)
       payment_day: tag[:payment_day],
       close_day: tag[:close_day],
       kind: tag[:kind],
-      # payer: payer
+      color: tag[:color]
     )
 
     puts "Create tag: #{tag_created.attributes}"
@@ -887,3 +896,22 @@ create_finance_transactions_and_payers(finance_transactions_despesas_mar, 'March
 create_finance_transactions_and_payers(finance_transaction_payments_made_mar, 'March')
 
 puts "Finance transactions created March"
+
+
+puts "including main tag in finance transactions..."
+
+FinanceTransaction.joins(:tags)
+  .where.not(tags: {title: ['Despesas', 'Receitas', 'Investimentos', 'Pagamentos Recebidos', 'Pagamentos Efetuados']})
+  .each do |finance_transaction|
+
+  if finance_transaction.revenue?
+    tag = Tag.find_by(title: 'Receitas')
+  else
+    tag = Tag.find_by(title: 'Despesas')
+  end
+
+  TagsFinanceTransaction.create!(
+    finance_transaction: finance_transaction,
+    tag: tag
+  )
+end
