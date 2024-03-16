@@ -5,7 +5,7 @@
       <li class="border-<%= finance_transaction.revenue? ? 'green' : 'red' %>">
         <span><%= finance_transaction.title %></span>
         <span class="float-end"><%= finance_transaction.purchase_date %></span><br/>
-        <span class="float-end badge text-bg-primary"><%= finance_transaction.tags.first.title %></span>
+        <span class="float-end badge text-bg-primary"><%= finance_transaction.tags&.first&.title %></span>
         <p>R$ <%= finance_transaction.real_amount %></p>
       </li>
     <% end %>

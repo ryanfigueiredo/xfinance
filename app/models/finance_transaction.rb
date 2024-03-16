@@ -12,6 +12,8 @@ class FinanceTransaction < ApplicationRecord
   before_validation :validate_installments
   before_validation :set_purchase_date
 
+  after_save :propagate_finance_transactions
+
   accepts_nested_attributes_for :payers_finance_transactions
   accepts_nested_attributes_for :tags_finance_transactions
 
@@ -42,9 +44,40 @@ class FinanceTransaction < ApplicationRecord
 
   def set_month
     if self.month.nil?
-      self.month = self.purchase_date.strftime("%B").downcase
+      installments_paid, total_installments = self.installments.split('/')
+
+      if installments_paid == 1
+        self.month = self.purchase_date.strftime("%B").downcase
+      else
+        current_month_index = current_month_index(self.purchase_date.strftime("%B").downcase)
+        self.month = Date::MONTHNAMES.compact[(current_month_index + installments_paid.to_i) - 12].downcase
+      end
     else
       self.month = month.downcase
     end
+  end
+
+  def installments_cash?
+    self.installments == 'Cash'
+  end
+
+  def propagate_finance_transactions
+    return if installments_cash?
+
+    finance_transaction_attributes = self.attributes
+    installments_paid, total_installments = self.installments.split('/')
+
+    if installments_paid.to_i != total_installments.to_i
+      current_month_index = current_month_index(self.month)
+
+      finance_transaction_attributes.merge!("installments" => "#{installments_paid.to_i + 1}/#{total_installments}")
+      finance_transaction_attributes.merge!("month" => Date::MONTHNAMES.compact[current_month_index + 1].downcase)
+
+      FinanceTransaction.create!(finance_transaction_attributes.except("id", "created_at", "updated_at"))
+    end
+  end
+
+  def current_month_index(month)
+    Date::MONTHNAMES.compact.each_index.detect{ |m| Date::MONTHNAMES.compact[m].downcase == month }
   end
 end

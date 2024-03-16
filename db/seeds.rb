@@ -456,24 +456,9 @@ finance_transactions_receitas = [
 
 finance_transactions_nubank_mamae_feb = [ # dates OK
   {
-    "title": "Madeira Cama",
-    "purchase_date": "27-09-2023",
-    "tag": 'Cartao de Credito Nubank Mamae',
-    "installments": "05/10",
-    "real_amount": 210.53
-  },
-  {
-    "title": "Notebook Dell",
-    "purchase_date": "21-07-2023",
-    "tag": 'Cartao de Credito Nubank Mamae',
-    "installments": "08/12",
-    "real_amount": 708.44
-  },
-  {
     "title": "MP GuicheWeb Circo Americano",
     "purchase_date": "27-01-2024",
     "tag": 'Cartao de Credito Nubank Mamae',
-    "installments": "08/12",
     "real_amount": 160.50
   },
   {
@@ -493,13 +478,6 @@ finance_transactions_nubank_mamae_feb = [ # dates OK
 ]
 
 finance_transactions_nubank_ryan_feb = [# dates OK
-  {
-   "title": "Herman Miller",
-   "purchase_date": "27-12-2023",
-   "tag": 'Cartao de Credito Nubank Ryan',
-   "installments": "3/12",
-   "real_amount": 954.68
-  },
   {
    "title": "Mercado Livre Cabo Thunderbolt",
    "purchase_date": "01-02-2024",
@@ -567,16 +545,6 @@ finance_transactions_nubank_ryan_feb = [# dates OK
    "installments": '',
    "real_amount": 54.99
   }
-]
-
-finance_transactions_pic_pay_feb = [# dates OK
-  {
-   "title": "Amazon Subwoofer",
-   "purchase_date": "28-06-2023",
-   "tag": 'Cartao de Credito Pic Pay',
-   "installments": "7/10",
-   "real_amount": 265.10
-  },
 ]
 
 finance_transactions_despesas_feb = [ #check after...
@@ -712,7 +680,38 @@ finance_transactions_despesas_mar = [
    "installments": '',
    "tag": 'Despesas',
    "payers": "Ryan",
-   "real_amount": 6
+   "real_amount": 6.00
+  },
+  {
+   "title": "Raxa bnb",
+   "payment_date": "03-05-2024",
+   "installments": '',
+   "tag": 'Despesas',
+   "payers": "Ryan",
+   "real_amount": 60.00
+  },
+  {
+   "title": "Secretaria da fazendo do estado do ceara",
+   "payment_date": "03-07-2024",
+   "installments": '',
+   "tag": 'Despesas',
+   "payers": "Ryan",
+   "real_amount": 201.24
+  }
+]
+
+finance_transactions_investimentos_mar = [
+  {
+    "title": "Fundos imobiliarios",
+    "installments": '',
+    "tag": 'Investimentos',
+    "real_amount": 508.00
+  },
+  {
+    "title": "Acoes",
+    "installments": '',
+    "tag": 'Investimentos',
+    "real_amount": 500.00
   }
 ]
 
@@ -729,6 +728,72 @@ finance_transaction_payments_made_mar = [
   }
 ]
 
+finance_transactions_nubank_mamae_mar = [
+  {
+    "title": "Google TT",
+    "purchase_date": "03-04-2024",
+    "tag": 'Cartao de Credito Nubank Mamae',
+    "real_amount": 24.00
+  },
+  {
+    "title": "Amazon Fortaleza Epp",
+    "purchase_date": "03-05-2024",
+    "tag": 'Cartao de Credito Nubank Mamae',
+    "real_amount": 65.00
+  },
+  {
+    "title": "Zp*Happy Kids",
+    "purchase_date": "03-10-2024",
+    "tag": 'Cartao de Credito Nubank Mamae',
+    "real_amount": 100.00
+  },
+  {
+    "title": "Kid + Ride",
+    "purchase_date": "03-10-2024",
+    "tag": 'Cartao de Credito Nubank Mamae',
+    "real_amount": 35.00
+  },
+  {
+    "title": "Pag*Leiturariomar",
+    "purchase_date": "03-16-2024",
+    "tag": 'Cartao de Credito Nubank Mamae',
+    "real_amount": 25.00
+  },
+]
+
+finance_transactions_nubank_ryan_mar = [
+  {
+    "title": "T.R Maia Performace Sup",
+    "purchase_date": "03-08-2024",
+    "tag": 'Cartao de Credito Nubank Ryan',
+    "real_amount": 160.00
+  },
+  {
+    "title": "Amazon Prime Canais",
+    "purchase_date": "03-12-2024",
+    "tag": 'Cartao de Credito Nubank Ryan',
+    "real_amount": 29.90
+  },
+  {
+    "title": "Sua Academia",
+    "purchase_date": "03-13-2024",
+    "tag": 'Cartao de Credito Nubank Ryan',
+    "real_amount": 109.90
+  },
+  {
+    "title": "Estorno de Amazon Prime Canais",
+    "purchase_date": "03-13-2024",
+    "tag": 'Cartao de Credito Nubank Ryan',
+    "real_amount": 29.90
+  },
+  {
+    "title": "Vivo Controle",
+    "purchase_date": "03-15-2024",
+    "tag": 'Cartao de Credito Nubank Ryan',
+    "real_amount": 54.99
+  },
+]
+
 def create_payers(payers)
   payers.each do |payer|
     payer_created = Payer.create!(
@@ -741,8 +806,6 @@ end
 
 def create_tags(tags)
   tags.each do |tag|
-    # payer = Payer.find_by(name: tag[:payer])
-
     tag_created = Tag.create!(
       title: tag[:title],
       payment_day: tag[:payment_day],
@@ -880,7 +943,6 @@ puts "Creating finance transactions of February..."
 
 create_finance_transactions_and_payers(finance_transactions_nubank_mamae_feb, 'February')
 create_finance_transactions_and_payers(finance_transactions_nubank_ryan_feb, 'February')
-create_finance_transactions_and_payers(finance_transactions_pic_pay_feb, 'February')
 create_finance_transactions_and_payers(finance_transactions_despesas_feb, 'February')
 create_finance_transactions_and_payers(acount_transactions_mensalidade_luana_feb, 'February')
 create_finance_transactions_and_payers(finance_transactions_investimentos_feb, 'February')
@@ -894,6 +956,9 @@ puts "Creating finance transactions of March..."
 
 create_finance_transactions_and_payers(finance_transactions_despesas_mar, 'March')
 create_finance_transactions_and_payers(finance_transaction_payments_made_mar, 'March')
+create_finance_transactions_and_payers(finance_transactions_investimentos_mar, 'March')
+create_finance_transactions_and_payers(finance_transactions_nubank_mamae_mar, 'March')
+create_finance_transactions_and_payers(finance_transactions_nubank_ryan_mar, 'March')
 
 puts "Finance transactions created March"
 
