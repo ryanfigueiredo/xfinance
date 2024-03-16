@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <% tags_finance_transactions.each do |finance_transaction| %>
+        <div class="card p-3">
+          <div class="d-flex justify-content-between">
+            <div>
+              <strong>
+                <%= finance_transaction.title %>
+              </strong><br />
+              <% finance_transaction.tags.each_with_index do|tag, index| %>
+                <small style="opacity: 70%;">
+                  <span class="widget-49-meeting-time text-<%= tag.color %>"><%= tag.title %><%= finance_transaction.tags.count != index + 1 ? ' |' : '' %></span>
+                </small>
+              <% end %>
+            </div>
+
+            <div>
+              <span class="text-secondary">
+                Date
+              </span>
+                <br />
+              <small>
+                <%= finance_transaction.purchase_date %>
+              </small>
+            </div>
+
+            <div>
+              <span class="text-secondary">
+                Installments
+              </span>
+                <br />
+              <small>
+                <%= finance_transaction.installments %>
+              </small>
+            </div>
+
+            <div>
+              <span class="text-secondary">
+                Tags
+              </span>
+                <br />
+              <span class="badge text-bg-primary rounded-circle">
+                G
+              </span>
+              <span class="badge text-bg-primary rounded-circle">
+                C
+              </span>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="d-flex justify-content-between p-0">
+            <div>
+              <small class="text-secondary">
+                Payers
+              </small>
+            </div>
+
+            <div>
+              <span class="badge text-bg-primary rounded-circle">
+                R
+              </span>
+              <span class="badge text-bg-primary rounded-circle">
+                L
+              </span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

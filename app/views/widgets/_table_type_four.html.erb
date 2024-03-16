@@ -1,0 +1,49 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="d-flex justify-content-between align-items-center activity">
+        <div class="icons">
+          <%= render "layouts/filter_by" %>
+        </div>
+      </div>
+      <div class="mt-3">
+        <ul class="list list-inline">
+          <% tags_finance_transactions.each do |finance_transaction| %>
+            <li class="d-flex justify-content-between">
+              <div class="d-flex flex-row align-items-center">
+                <div class="ms-2">
+                  <h6 class="mb-0 text-black-50">
+                    <%= finance_transaction.title %>
+                  </h6>
+                  <div class="d-flex flex-row mt-1 text-black-50 date-time">
+                    <div>
+                      <i class="fa fa-calendar"></i>
+                      <span class="ms-2">
+                        <%= finance_transaction.purchase_date %>
+                      </span>
+
+                      <span class="me-2 ms-2"><%= finance_transaction.installments %></span>
+                    </div>
+
+                    <div class="ms-3">
+                      <% finance_transaction.tags.each do |tag| %>
+                        <span class="badge text-bg-<%= tag.color %>"><%= tag.title %></span>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex flex-row align-items-center">
+                <div class="d-flex flex-column me-2">
+                  R$ <%= finance_transaction.real_amount %>
+                </div>
+
+                <i class="fa fa-ellipsis-vertical m-2"></i>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <% tags_finance_transactions.each do |finance_transaction| %>
+      <div class="col-12">
+        <div class="card card-margin">
+          <div class="card-body">
+            <div class="widget-49">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="widget-49-title-wrapper">
+                  <div class="widget-49-date-primary">
+                    <span class="widget-49-date-day">09</span>
+                    <span class="widget-49-date-month">apr</span>
+                  </div>
+                </div>
+                <div class="ps-2 mt-1">
+                  <div class="widget-49-meeting-info">
+                    <span class="widget-49-pro-title"><%= finance_transaction.title %></span><br />
+                    <% finance_transaction.tags.each_with_index do|tag, index| %>
+                      <small>
+                        <span class="widget-49-meeting-time text-<%= tag.color %>"><%= tag.title %><%= finance_transaction.tags.count != index + 1 ? ' |' : '' %></span>
+                      </small>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="ps-2">
+                  <%= finance_transaction.installments %>
+                </div>
+
+                <div class="ps-2">
+                  R$ <%= finance_transaction.real_amount %>
+                </div>
+                <div class="ms-ato p-2">
+                  <div class="widget-49-meeting-action mt-3">
+                    <a href="#" class="btn btn-sm btn-flash-border-primary">
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
