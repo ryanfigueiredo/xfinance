@@ -1,21 +1,38 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  filterTableFinanceTransactions() {
-    var input, filter, table, tr, td, i, txtValue
+  filterTableFinanceTransactions({ params: { typeObject } }) {
+    var input, filter, ul, li, a, table, tr, td, i, txtValue;
     input = document.getElementById("filter-title")
     filter = input.value.toUpperCase()
-    table = document.getElementById("table-finance-transactions")
-    tr = table.getElementsByTagName("tr")
 
-    for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[0];
-      if (td) {
-        txtValue = td.textContent || td.innerText;
+    if(typeObject == 'list') {
+      ul = document.getElementById("list-finance-transactions")
+      li = ul.getElementsByTagName("li")
+
+      for (i = 0; i < li.length; i++) {
+        a = li[i];
+        txtValue = a.textContent || a.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
+            li[i].style.display = "";
         } else {
-          tr[i].style.display = "none";
+            li[i].setAttribute('style', 'display: none !important')
+        }
+      }
+
+    } else {
+      table = document.getElementById("table-finance-transactions")
+      tr = table.getElementsByTagName("tr")
+
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
         }
       }
     }

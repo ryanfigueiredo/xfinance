@@ -2,7 +2,8 @@
   <input type="text" data-controller="dashboard"
     class="form-control field-filter me-2" id="filter-title"
     placeholder="Filter by title"
-    data-action="keyup->dashboard#filterTableFinanceTransactions">
+    data-action="keyup->dashboard#filterTableFinanceTransactions"
+    data-dashboard-type-object-param="<%= object %>">
 
   <% if @render_add_button.present?  %>
     <button class="btn btn-outline-success field-filter" data-controller="dashboard" id="add-finance-transaction"
