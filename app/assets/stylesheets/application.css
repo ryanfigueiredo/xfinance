@@ -634,3 +634,23 @@ text-transform: uppercase;
 span.tag-list {
   margin-right: 10px;
 }
+
+.text-bg-secondary-emphasis {
+  color: white;
+  background-color: #6b6b6b81;
+}
+
+.text-bg-warning-emphasis {
+  color: white;
+  background-color: #edd653;
+}
+
+.text-bg-info-emphasis {
+  color: white;
+  background-color: #8a4ee5;
+}
+
+.text-bg-light-emphasis {
+  color: white;
+  background-color: #4ecce5;
+}
