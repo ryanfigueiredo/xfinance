@@ -878,7 +878,11 @@ def create_finance_transactions_and_payers(finance_transactions, month)
       attributes = {
         title: finance_transaction[:title],
         installments: finance_transaction[:installments],
-        real_amount: finance_transaction[:real_amount]
+        real_amount: finance_transaction[:real_amount],
+        tags_finance_transactions_attributes: {
+          id: nil,
+          tag_id: tag.id
+        }
       }
 
       attributes.merge!(purchase_date: finance_transaction[:purchase_date]) if finance_transaction[:purchase_date].present?
@@ -904,13 +908,6 @@ def create_finance_transactions_and_payers(finance_transactions, month)
       )
 
       puts "Create payer finance transaction: #{payer_finance_transaction_created.attributes}"
-
-      tag_finance_transaction_created = TagsFinanceTransaction.create!(
-          finance_transaction: finance_transaction_created,
-          tag: tag
-        )
-
-        puts "Create tag finance transaction: #{tag_finance_transaction_created.attributes}"
     end
   end
 end

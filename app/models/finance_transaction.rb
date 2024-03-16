@@ -73,6 +73,18 @@ class FinanceTransaction < ApplicationRecord
       finance_transaction_attributes.merge!("installments" => "#{installments_paid.to_i + 1}/#{total_installments}")
       finance_transaction_attributes.merge!("month" => Date::MONTHNAMES.compact[current_month_index + 1].downcase)
 
+      if self.tags.present?
+        finance_transaction_attributes.merge!(
+          tags_finance_transactions_attributes: self.tag_ids.map do |tag_id|
+            {
+              id: nil,
+              tag_id: tag_id
+            }
+          end
+        )
+
+      end
+
       FinanceTransaction.create!(finance_transaction_attributes.except("id", "created_at", "updated_at"))
     end
   end
